@@ -1,0 +1,7 @@
+Project Runaway:
+
+Road trip planning App. 
+User enters a final destination along with a starting time/date.
+App returns directions along with a hourly log of the weather at that time.
+If weather conditions are not well, the app will try to suggest a better start time.
+BONUS: User places make and model of car, allows app to return places to stop for gas/eat food.
