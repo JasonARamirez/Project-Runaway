@@ -3,6 +3,6 @@ module.exports = function(err, response, res){
         res.send(encryption.encryptDataOut(response));
     }
     else {
-        res.send(JSON.stringify({success : 'FAIL'}));
+        res.send(JSON.stringify({success : 0}));
     }
 };
