@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD66F4F31E61302C00400F57 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD66F4F21E61302C00400F57 /* GoogleMaps.bundle */; };
+		FD66F5031E61315300400F57 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4F61E61315300400F57 /* Accelerate.framework */; };
+		FD66F5041E61315300400F57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4F71E61315300400F57 /* CoreData.framework */; };
+		FD66F5051E61315300400F57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4F81E61315300400F57 /* CoreGraphics.framework */; };
+		FD66F5061E61315300400F57 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4F91E61315300400F57 /* CoreLocation.framework */; };
+		FD66F5071E61315300400F57 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FA1E61315300400F57 /* CoreText.framework */; };
+		FD66F5081E61315300400F57 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FB1E61315300400F57 /* GLKit.framework */; };
+		FD66F5091E61315300400F57 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FC1E61315300400F57 /* ImageIO.framework */; };
+		FD66F50A1E61315300400F57 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FD1E61315300400F57 /* libc++.tbd */; };
+		FD66F50B1E61315300400F57 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FE1E61315300400F57 /* libz.tbd */; };
+		FD66F50C1E61315300400F57 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F4FF1E61315300400F57 /* OpenGLES.framework */; };
+		FD66F50D1E61315300400F57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F5001E61315300400F57 /* QuartzCore.framework */; };
+		FD66F50E1E61315300400F57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F5011E61315300400F57 /* SystemConfiguration.framework */; };
+		FD66F50F1E61315300400F57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD66F5021E61315300400F57 /* UIKit.framework */; };
+		FDC10C0B1E612DBB00D4BC9D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC10C0A1E612DBB00D4BC9D /* GoogleMaps.framework */; };
+		FDC10C0D1E612E1E00D4BC9D /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC10C0C1E612E1E00D4BC9D /* GoogleMapsCore.framework */; };
+		FDC10C0F1E612E5800D4BC9D /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC10C0E1E612E5800D4BC9D /* GoogleMapsBase.framework */; };
 		FDD09E701E611B7B00C9B514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */; };
 		FDD09E721E611B7B00C9B514 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E711E611B7B00C9B514 /* ViewController.swift */; };
 		FDD09E751E611B7B00C9B514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD09E731E611B7B00C9B514 /* Main.storyboard */; };
@@ -34,6 +51,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD66F4F21E61302C00400F57 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		FD66F4F61E61315300400F57 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FD66F4F71E61315300400F57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FD66F4F81E61315300400F57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD66F4F91E61315300400F57 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FD66F4FA1E61315300400F57 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FD66F4FB1E61315300400F57 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		FD66F4FC1E61315300400F57 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		FD66F4FD1E61315300400F57 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		FD66F4FE1E61315300400F57 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		FD66F4FF1E61315300400F57 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FD66F5001E61315300400F57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FD66F5011E61315300400F57 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FD66F5021E61315300400F57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FDC10C0A1E612DBB00D4BC9D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		FDC10C0C1E612E1E00D4BC9D /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		FDC10C0E1E612E5800D4BC9D /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		FDD09E6C1E611B7B00C9B514 /* Project Runaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Runaway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD09E711E611B7B00C9B514 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +88,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD66F5031E61315300400F57 /* Accelerate.framework in Frameworks */,
+				FD66F5041E61315300400F57 /* CoreData.framework in Frameworks */,
+				FD66F5051E61315300400F57 /* CoreGraphics.framework in Frameworks */,
+				FD66F5061E61315300400F57 /* CoreLocation.framework in Frameworks */,
+				FD66F5071E61315300400F57 /* CoreText.framework in Frameworks */,
+				FD66F5081E61315300400F57 /* GLKit.framework in Frameworks */,
+				FD66F5091E61315300400F57 /* ImageIO.framework in Frameworks */,
+				FD66F50A1E61315300400F57 /* libc++.tbd in Frameworks */,
+				FD66F50B1E61315300400F57 /* libz.tbd in Frameworks */,
+				FD66F50C1E61315300400F57 /* OpenGLES.framework in Frameworks */,
+				FD66F50D1E61315300400F57 /* QuartzCore.framework in Frameworks */,
+				FD66F50E1E61315300400F57 /* SystemConfiguration.framework in Frameworks */,
+				FD66F50F1E61315300400F57 /* UIKit.framework in Frameworks */,
+				FDC10C0F1E612E5800D4BC9D /* GoogleMapsBase.framework in Frameworks */,
+				FDC10C0B1E612DBB00D4BC9D /* GoogleMaps.framework in Frameworks */,
+				FDC10C0D1E612E1E00D4BC9D /* GoogleMapsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +124,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD66F4F41E61303700400F57 /* Google Maps */ = {
+			isa = PBXGroup;
+			children = (
+				FD66F4F21E61302C00400F57 /* GoogleMaps.bundle */,
+				FDC10C0E1E612E5800D4BC9D /* GoogleMapsBase.framework */,
+				FDC10C0C1E612E1E00D4BC9D /* GoogleMapsCore.framework */,
+				FDC10C0A1E612DBB00D4BC9D /* GoogleMaps.framework */,
+			);
+			name = "Google Maps";
+			sourceTree = "<group>";
+		};
+		FD66F4F51E61315300400F57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD66F4F61E61315300400F57 /* Accelerate.framework */,
+				FD66F4F71E61315300400F57 /* CoreData.framework */,
+				FD66F4F81E61315300400F57 /* CoreGraphics.framework */,
+				FD66F4F91E61315300400F57 /* CoreLocation.framework */,
+				FD66F4FA1E61315300400F57 /* CoreText.framework */,
+				FD66F4FB1E61315300400F57 /* GLKit.framework */,
+				FD66F4FC1E61315300400F57 /* ImageIO.framework */,
+				FD66F4FD1E61315300400F57 /* libc++.tbd */,
+				FD66F4FE1E61315300400F57 /* libz.tbd */,
+				FD66F4FF1E61315300400F57 /* OpenGLES.framework */,
+				FD66F5001E61315300400F57 /* QuartzCore.framework */,
+				FD66F5011E61315300400F57 /* SystemConfiguration.framework */,
+				FD66F5021E61315300400F57 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FDD09E631E611B7B00C9B514 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +162,7 @@
 				FDD09E831E611B7B00C9B514 /* Project RunawayTests */,
 				FDD09E8E1E611B7B00C9B514 /* Project RunawayUITests */,
 				FDD09E6D1E611B7B00C9B514 /* Products */,
+				FD66F4F51E61315300400F57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +179,7 @@
 		FDD09E6E1E611B7B00C9B514 /* Project Runaway */ = {
 			isa = PBXGroup;
 			children = (
+				FD66F4F41E61303700400F57 /* Google Maps */,
 				FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */,
 				FDD09E711E611B7B00C9B514 /* ViewController.swift */,
 				FDD09E731E611B7B00C9B514 /* Main.storyboard */,
@@ -235,6 +318,7 @@
 				FDD09E7A1E611B7B00C9B514 /* LaunchScreen.storyboard in Resources */,
 				FDD09E771E611B7B00C9B514 /* Assets.xcassets in Resources */,
 				FDD09E751E611B7B00C9B514 /* Main.storyboard in Resources */,
+				FD66F4F31E61302C00400F57 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +494,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+				);
 				INFOPLIST_FILE = "Project Runaway/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "se329.gonzalesneal.Project-Runaway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -422,8 +514,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+					"$(PROJECT_DIR)/Project\\ Runaway",
+				);
 				INFOPLIST_FILE = "Project Runaway/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "se329.gonzalesneal.Project-Runaway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -503,6 +603,7 @@
 				FDD09E961E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDD09E971E611B7B00C9B514 /* Build configuration list for PBXNativeTarget "Project RunawayTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +612,7 @@
 				FDD09E991E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDD09E9A1E611B7B00C9B514 /* Build configuration list for PBXNativeTarget "Project RunawayUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +621,7 @@
 				FDD09E9C1E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
