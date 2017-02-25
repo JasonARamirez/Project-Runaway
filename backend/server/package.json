@@ -1,0 +1,8 @@
+{
+  "name": "cravoServer",
+  "version": "0.0.1",
+  "description": "Server Environment for cravo app",
+  "dependencies": {
+
+  }
+}
