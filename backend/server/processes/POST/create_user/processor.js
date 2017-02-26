@@ -1,11 +1,19 @@
-var userIDGenerator = require('../../../random_generator/unique_is_generator').generateUserID;
-var insertNewUser = require('../../../database/database').insert.users.
+var userIDGenerator = require('../../../random_generator/unique_id_generator').generateUserID;
+var createUser = require('../../../database/database').insert.users.createUser;
+var doesEmailExist = require('../../../database/database').retrieve.users.doesEmailExist;
 module.exports = function(request, response){
-  userIDGenerator(function(err, newUserID){
-    if(err == null){
-      request.newUserID = newUserID;
-      createUser(request, function(err){
-        responseToSend(err, newUserID, response);
+  doesEmailExist(request.email, function(err, exists){
+    if(!exists){
+      userIDGenerator(function(err, newUserID){
+        if(err == null){
+          request.userID = newUserID;
+          createUser(request, function(err){
+            responseToSend(err, newUserID, response);
+          });
+        }
+        else{
+          responseToSend(err, null, response);
+        }
       });
     }
     else{
@@ -14,9 +22,9 @@ module.exports = function(request, response){
   });
 }
 
-var responseToSend(err, userID, response){
+var responseToSend = function(err, userID, response){
   if(err != null || userID == null){
-    response.func(err, null, response.res);
+    response.func(true, null, response.res);
   }
   else{
     response.func(null, {success : 1, userID: userID}, response.res);

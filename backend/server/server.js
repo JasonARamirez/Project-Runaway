@@ -14,22 +14,22 @@ var login = require('./routing/GET/login');
 app.use('/login', login);
 
 var weatherAlongRoute = require('./routing/GET/weather_along_route');
-app.use('./weatherAlongRoute', weatherAlongRoute);
+app.use('/weatherAlongRoute', weatherAlongRoute);
 
 var weatherAtLocation = require('./routing/GET/weather_at_location');
-app.use('./weatherAtLocation', weatherAtLocation);
+app.use('/weatherAtLocation', weatherAtLocation);
 
 var changeStart = require('./routing/PATCH/change_start');
-app.use('./changeStart', changeStart);
+app.use('/changeStart', changeStart);
 
 var completedTrip = require('./routing/PATCH/completed_trip');
-app.use('./completedTrip', completedTrip);
+app.use('/completedTrip', completedTrip);
 
 var createUser = require('./routing/POST/create_user');
-app.use('./createUser', createUser);
+app.use('/createUser', createUser);
 
 var roadTrip = require('./routing/POST/road_trip');
-app.use('./roadTrip');
+app.use('/roadTrip', roadTrip);
 
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){

@@ -4,6 +4,7 @@ module.exports = {
     encryptDataOut : function(message){
         try{
             var JSONString = JSON.stringify(message);
+            console.log('Sending: ' + JSONString);
             return JSONString;
         }catch(err){
             console.log("Incorrect JavaScript Object");
@@ -13,8 +14,8 @@ module.exports = {
 
     decryptDataIn : function(message){
         try{
-          console.log(message);
-            var requestObject = JSON.parse(message);
+            console.log(message.query);
+            var requestObject = JSON.parse(message.query.request);
             return requestObject;
         }catch(err){
             console.log("Parsing incorrect: " + err.message);

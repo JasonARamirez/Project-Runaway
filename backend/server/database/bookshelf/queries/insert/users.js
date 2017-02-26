@@ -2,7 +2,7 @@ var Users = require('../../collections/users');
 var User = require('../../models/users');
 
 module.exports = {
-  createUser = function(userData, callback){
+  createUser : function(userData, callback){
     var userToInsert = {
       ID: userData.userID,
       userName : userData.username,
