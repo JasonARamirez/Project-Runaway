@@ -62,11 +62,10 @@ var validateRoadTrip = function(req){
 
   console.log('Valid End Longitude: ' + validEndLng);
 
-  var startTimeRegex = /^(\d{2})\.(\d{2})\.(\d{4})-(\d{2}):(\d{2}):(\d{2})$/;
+  var startTimeRegex = /^(\d{2})\/(\d{2})\/(\d{4})-(\d{2}):(\d{2}):(\d{2})$/;
   var startTime = req.startTime;
   var matches = startTime.match(startTimeRegex);
-  console.log(startTime);
-  if(!(matches > 0)){
+  if(!(matches.length > 0)){
     console.log('Valid Start Time RegEx: false');
     return false;
   }
