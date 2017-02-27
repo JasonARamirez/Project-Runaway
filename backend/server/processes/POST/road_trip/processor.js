@@ -1,3 +1,3 @@
 module.exports = function(request, response){
-  //TODO
+  console.log('Made it here!');
 }

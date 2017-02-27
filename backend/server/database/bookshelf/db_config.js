@@ -85,3 +85,5 @@ db.knex.schema.hasTable('Locations').then(function(exists) {
     })
   }
 });
+
+module.exports = db;

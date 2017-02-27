@@ -1,27 +1,27 @@
 module.exports = function(req, callback){
-  var hasCorrectProperties = checkCancelTripJSONProperties(req);
+  var hasCorrectProperties = checkCompletedTripJSONProperties(req);
   if(hasCorrectProperties){
-    var isValid = validateCancelTripData(req);
-    if(isValid){
-      callback(null);
+    var isValid = validateChangeStartData(req);
+      if(isValid){
+        callback(null);
+      }
+      else{
+        callback(true);
+      }
     }
-    else{
-      callback(true);
-    }
-  }
   else{
     callback(true);
   }
 }
 
-var checkCancelTripJSONProperties = function(req){
+var checkCompletedTripJSONProperties = function(req){
   var hasUserID = req.hasOwnProperty('userID');
   var hasRouteID = req.hasOwnProperty('routeID');
 
   return hasUserID && hasRouteID;
 }
 
-var validateCancelTripData = function(req){
+var validateCompletedTripData = function(req){
   var userIDRegEx = /^[a-zA-Z0-9]{8}[-][a-zA-Z0-9]{4}[-][U][a-zA-Z0-9]{3}[-][a-zA-Z0-9]{4}[-][a-zA-Z0-9]{12}/;
   var userID = req.userID;
   var validUserID = userIDRegEx.test(userID);
