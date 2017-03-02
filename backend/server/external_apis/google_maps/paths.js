@@ -8,6 +8,7 @@ function Path(step, numPath){
   var endLng = step.end_location.lng;
   this.end = [endLat, endLng];
   this.numPath = numPath;
+  this.time = step.duration.value;
 }
 
 var metersToMiles = function(meters){

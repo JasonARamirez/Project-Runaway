@@ -6,6 +6,6 @@ var Location = require('../models/locations');
 //make a new collection (set of db rows returned)
 var Locations = new db.Collection();
 //extends model class to Users
-Users.model = Location;
+Locations.model = Location;
 //initialize Users in a module to easily reference later
 module.exports = Locations;

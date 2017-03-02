@@ -43,8 +43,10 @@ db.knex.schema.hasTable('Routes').then(function(exists) {
       table.string('ID', 37).primary();
       table.string('userID', 37);
       table.dateTime('startTime');
-      table.integer('startLocID');
-      table.integer('endLocID');
+      table.integer('startID');
+      table.integer('endID');
+      table.bool('done');
+      table.bool('canceled');
     }).then(function(table) {
       //print to user that it created the Users table
       console.log('created table :', 'Routes');
@@ -56,14 +58,13 @@ db.knex.schema.hasTable('Paths').then(function(exists) {
   if (!exists) {
     //create a table in the db using knex's createTable method
     db.knex.schema.createTable('Paths', function(table) {
-      //make a string called userID to represent an assigned userID to be stored with a max of 37 characters
       table.increments('ID').primary();
       table.string('routeID', 37);
       table.integer('pos');
-      table.double('time');
+      table.integer('time');
       table.double('distance');
-      table.integer('startLocID');
-      table.integer('endLocID');
+      table.integer('startID');
+      table.integer('endID');
     }).then(function(table) {
       //print to user that it created the Users table
       console.log('created table :', 'Paths');
@@ -78,7 +79,7 @@ db.knex.schema.hasTable('Locations').then(function(exists) {
       //make a string called userID to represent an assigned userID to be stored with a max of 37 characters
       table.increments('ID').primary();
       table.double('lat');
-      table.double('long');
+      table.double('lng');
     }).then(function(table) {
       //print to user that it created the Users table
       console.log('created table :', 'Locations');

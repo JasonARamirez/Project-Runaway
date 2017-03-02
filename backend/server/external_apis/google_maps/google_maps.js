@@ -12,26 +12,27 @@ var gmAPI = new GoogleMapsAPI(publicConfig);
 module.exports = gmAPI;
 */
 var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyDEaX0V5IP1RXC0OWAjeGIFM5ZyoVp1p74'
+  key: 'AIzaSyCjcFm5tomMm8FYrDetmna78obhvgRt-WM'
 });
 //https://googlemaps.github.io/google-maps-services-js/docs/GoogleMapsClient.html
 module.exports = {
   getDirections : function(start, end, callback){
-    startLatLng = [start.lat, start.lng];
-    endLatLng = [end.lat, end.lng];
     var params = {
-      origin : startLatLng,
-      destination : endLatLng
+      origin : start,
+      destination : end
     }
     googleMapsClient.directions(params, function(err, response){
       if(err){
         callback(err, null);
       }
       else{
+        var Route = require('./route');
         var routesToReturn = [];
-        var routes = response.routes;
+        var routes = response.json.routes;
         for(var index = 0; index < routes.length; index++){
-          routesToReturn.push(getARoute(routes[index]));
+          var pathsForRoute = getARoute(routes[index]);
+          var toAdd = new Route(start, end, pathsForRoute);
+          routesToReturn.push(toAdd);
         }
         callback(null, routesToReturn);
       }
@@ -54,8 +55,9 @@ var getARoute = function(route){
   for(var index = 0; index < legs.length; index++){
     var newPaths = getPaths(legs[index], numPath);
     numPath += newPaths.length;
-    paths.append(newPaths);
+    paths = paths.concat(newPaths);
   }
+  return paths;
 }
 
 var getPaths = function(leg, numPath){

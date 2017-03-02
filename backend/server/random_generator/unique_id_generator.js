@@ -27,11 +27,11 @@ module.exports = {
 
         //Generates a unique listID
         generateRouteID : function(callback){
-          var listIDExists = true;
-          var newListID = '';
+          var routeIDExists = true;
+          var newRouteID = null;
 
           async.whilst(
-            function () { return listIDExists; },
+            function () { return routeIDExists; },
             function (callback) {
               newRouteID = generateGenericID('R');
               db.retrieve.routes.isRouteID(newRouteID, function(err, doesRouteExist){
@@ -42,7 +42,7 @@ module.exports = {
               });
             },
             function (err) {
-              callback(err, newRouteID);
+              callback(newRouteID);
             }
           );
         }
