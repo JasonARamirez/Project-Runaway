@@ -18,33 +18,34 @@ module.exports = function(route, userID, routeID, startTime, callback){
 
 var insertPaths = function(route, routeID, callback){
   var paths = route.paths;
-  var numPaths = paths.length;
-  var index = 0;
-  async.whilst(
-    function () { return index < numPaths; },
-    function (callback) {
-      var path = paths[index];
-      insertStartAndEndLocations(path, function(err, startID, endID){
-        if(err == null){
-          savePath(path, routeID, startID, endID, function(err, pathID){
-            if(err == null){
-              index++;
-              callback();
-            }
-            else{
-              callback(err);
-            }
-          });
-        }
-        else{
-          callback(err);
-        }
-      });
-    },
-    function (err) {
-      callback(err);
-    }
-  );
+  var asyncTasks = createTasks(paths, routeID);
+  async.parallel(asyncTasks, function(err){
+    callback(err);
+  });
+}
+
+var createTasks = function(paths, routeID){
+  var tasks = [];
+  paths.forEach(function(path){
+    tasks.push(insertPath(path, routeID));
+  });
+  return tasks;
+}
+
+var insertPath = function(path, routeID){
+  var toInsert = function(callback){
+    insertStartAndEndLocations(path, function(err, startID, endID){
+      if(err == null){
+        savePath(path, routeID, startID, endID, function(err, pathID){
+            callback(err);
+        });
+      }
+      else{
+        callback(err);
+      }
+    });
+  }
+  return toInsert;
 }
 
 var insertStartAndEndLocations = function(path, callback){

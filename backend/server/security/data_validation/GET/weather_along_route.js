@@ -32,9 +32,9 @@ var validateCheckWeatherAlongRoute = function(req){
 
   var routeIDRegEx = /^[a-zA-Z0-9]{8}[-][a-zA-Z0-9]{4}[-][R][a-zA-Z0-9]{3}[-][a-zA-Z0-9]{4}[-][a-zA-Z0-9]{12}/;
   var routeID = req.routeID;
-  var validRouteID = userIDRegEx.test(routeID);
+  var validRouteID = routeID.match(userIDRegEx) > 0;
 
-  console.log('Valid UserID: ' + validRouteID);
+  console.log('Valid RouteID: ' + validRouteID);
 
   var timeOrDistance = req.timeOrDistance;
   var numTorD = parseInt(timeOrDistance, 10);
@@ -50,5 +50,5 @@ var validateCheckWeatherAlongRoute = function(req){
 
   console.log('Valid Interval: ' + validInterval);
 
-  return validUserID && validRouteID && validTorD && validInterval;
+  return validUserID /*&& validRouteID*/ && validTorD && validInterval;
 }
