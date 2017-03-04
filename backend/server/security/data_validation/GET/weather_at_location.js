@@ -16,11 +16,10 @@ module.exports = function(req, callback){
 
 var checkWeatherAtLocationProperties = function(req){
   var hasUserID = req.hasOwnProperty('userID');
-  var hasRouteID = req.hasOwnProperty('routeID');
   var hasLoc = req.hasOwnProperty('loc');
   var hasTime = req.hasOwnProperty('time');
 
-  return hasUserID && hasRouteID && hasLoc && hasTime;
+  return hasUserID && hasLoc && hasTime;
 }
 
 var validateWeatherAtLocationData = function(req){
@@ -30,14 +29,8 @@ var validateWeatherAtLocationData = function(req){
   console.log(userID);
   console.log('Valid UserID: ' + validUserID);
 
-  var routeIDRegEx = /^[a-zA-Z0-9]{8}[-][a-zA-Z0-9]{4}[-][R][a-zA-Z0-9]{3}[-][a-zA-Z0-9]{4}[-][a-zA-Z0-9]{12}/;
-  var routeID = req.routeID;
-  var validRouteID = userIDRegEx.test(routeID);
-
-  console.log('Valid UserID: ' + validRouteID);
-
   var loc = req.loc;
-  if(!isArray(loc) || start.length != 2){
+  if(!isArray(loc) || loc.length != 2){
     console.log('Valid Location: false');
     return false;
   }
@@ -64,7 +57,7 @@ var validateWeatherAtLocationData = function(req){
 
   console.log('Valid Date: ' + validTime);
 
-  return validTime && validLocLng && validLocLat && validRoute && validUser;
+  return validTime && validLocLng && validLocLat && validUserID;
 }
 
 function isArray(toTest) {

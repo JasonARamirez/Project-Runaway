@@ -11,8 +11,7 @@ module.exports = function(request, response){
           var isBasedOnTime = request.timeOrDistance == 0;
           var interval = request.interval;
           var timesToCheck = getIntervals(isBasedOnTime, interval, routeDetails.time, routeDetails.distance);
-          console.log(timesToCheck);
-          getWeatherDetails(routeDetails.locations, startTime, timesToCheck.numToCheck, timesToCheck.timeInterval, function(err, weatherCards){
+          getWeatherDetails(routeDetails.locations, startTime, timesToCheck.numToCheck, timesToCheck.interval, function(err, weatherCards){
             responseToSender(err, weatherCards, response);
           });
         }

@@ -5,18 +5,23 @@ var getWeatherAtLocation = require('../../../external_apis/dark_sky/dark_sky');
 
 module.exports = function(pathIntersections, dateTime, numPoints, minutesPerInterval, callback){
   getLocationsAlongPath(pathIntersections, numPoints, function(err, locations){
-    var asyncTasks = getAsyncTasks(locations, dateTime);
-    async.parallel(asyncTasks, function(err, weatherCards){
-      callback(err, weatherCards);
-    });
+    if(err == null){
+      var asyncTasks = getAllAsyncTasks(locations, dateTime, minutesPerInterval);
+      async.parallel(asyncTasks, function(err, weatherCards){
+        callback(err, weatherCards);
+      });
+    }
+    else{
+      callback(err, null);
+    }
   });
 }
 
-var getAsyncTasks = function(locations, date){
+var getAllAsyncTasks = function(locations, date, minutesPerInterval){
   var toReturn = [];
   var index = 0;
   locations.forEach(function(location){
-    toReturn.push(toGetData(index, location, date));
+    toReturn.push(toGetData(index, location, date, minutesPerInterval));
     index++;
   });
   return toReturn;
@@ -35,15 +40,38 @@ var addMinutes = function(date, minutes) {
     return new Date(date.getTime() + minutes*60000);
 }
 
-var toGetData = function(index, location, date){
+var toGetData = function(index, location, date, minutesPerInterval){
+  var newDate = addMinutes(date, index * minutesPerInterval);
+  var asyncTasks = getOneAsyncTask(index, location, newDate);
   var getTownAndWeather = function(callback){
-    getTownName(location, function(err, name){
-      var newDate = addMinutes(date, index * 15);
-      getWeatherAtLocation(location, newDate, function(err, temp, weatherType){
-        var weatherCard = new WeatherCard(index + 1, weatherType, temp, newDate, location, name);
+    async.parallel(asyncTasks, function(err, results){
+      if(err == null){
+        var name = results[0];
+        var weather = results[1];
+        var weatherCard = new WeatherCard(index + 1, weather.type, weather.temp, newDate, location, name);
         callback(null, weatherCard);
-      });
+      }
+      else{
+        callback(err, null);
+      }
+    });
+  };
+  return getTownAndWeather;
+}
+
+var getOneAsyncTask = function(index, location, date){
+  var tasks = [];
+  var getTownNameTask = function(callback){
+    getTownName(location, function(err, name){
+      callback(err, name);
     });
   }
-  return getTownAndWeather;
+  tasks.push(getTownNameTask);
+  var getWeatherAtLocationTask = function(callback){
+    getWeatherAtLocation(location, date, function(err, temp, weatherType){
+      callback(err, {temp:temp,type:weatherType});
+    });
+  }
+  tasks.push(getWeatherAtLocationTask);
+  return tasks;
 }
