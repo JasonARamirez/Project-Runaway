@@ -8,8 +8,26 @@
 
 import UIKit
 
-class InitialViewController: UIViewController {
+// MARK: -
+// TODO: -
+// FIXME: -
 
+class InitialViewController: UIViewController {
+    
+    @IBOutlet weak var logInButton: UIButton!
+
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBAction func signUpButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func logInButtonPressed(_ sender: Any) {
+        
+        //
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

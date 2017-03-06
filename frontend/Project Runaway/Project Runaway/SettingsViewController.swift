@@ -8,6 +8,10 @@
 
 import UIKit
 
+// MARK: -
+// TODO: -
+// FIXME: -
+
 class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {

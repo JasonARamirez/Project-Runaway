@@ -8,8 +8,24 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+// MARK: -
+// TODO: -
+// FIXME: -
 
+class SignUpViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    @IBAction func toLogInViewController(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var btn_box: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +36,23 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func btn_box(sender: UIButton) {
+        if (btn_box.isSelected == true)
+        {
+            btn_box.setBackgroundImage(UIImage(named: "Checked"), for: UIControlState.normal)
+            
+            btn_box.isSelected = false;
+        }
+        else
+        {
+            btn_box.setBackgroundImage(UIImage(named: "Unchecked"), for: UIControlState.normal)
+            
+            btn_box.isSelected = true;
+        }
+    }
+
+    
     
 
     /*

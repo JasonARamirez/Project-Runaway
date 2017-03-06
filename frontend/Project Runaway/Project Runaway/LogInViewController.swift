@@ -8,8 +8,33 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+// MARK: -
+// TODO: -
+// FIXME: -
 
+
+class LogInViewController: UIViewController {
+    
+    @IBOutlet weak var toSignUpButton: UIButton!
+    
+    @IBOutlet weak var forgotEmailButton: UIButton!
+
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
+    @IBOutlet weak var logInButton: UIButton!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func toSignUpViewController(_ sender: Any) {
+    }
+
+    @IBAction func toHomeViewController(_ sender: Any) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
