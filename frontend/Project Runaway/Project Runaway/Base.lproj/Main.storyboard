@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T6e-K9-AGc">
-    <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gc9-sX-hYq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -13,18 +7,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
->>>>>>> Dev
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--InitialViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-<<<<<<< HEAD
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController title="InitialViewController" id="BYZ-38-t0r" customClass="InitialViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> Dev
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,25 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65x-Fg-Eu3" customClass="GMSMapView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="65x-Fg-Eu3" secondAttribute="trailing" id="Adf-kJ-1aH"/>
-                            <constraint firstItem="65x-Fg-Eu3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IYo-x3-Acu"/>
-                            <constraint firstItem="65x-Fg-Eu3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KgN-Oe-rAf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="65x-Fg-Eu3" secondAttribute="bottom" id="e6W-Rb-9an"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="rOa-m4-YtO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Mre-yX-XEh"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="googleMapsView" destination="65x-Fg-Eu3" id="l1e-jv-SBv"/>
-=======
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6C-sV-kn1">
                                 <rect key="frame" x="0.0" y="28" width="375" height="639"/>
                                 <subviews>
@@ -281,32 +251,10 @@
                     <connections>
                         <outlet property="logInButton" destination="Qq3-Ck-xIt" id="LUD-67-xSQ"/>
                         <outlet property="signUpButton" destination="rKR-ND-exi" id="Uid-73-l4O"/>
->>>>>>> Dev
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="974" y="777"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X3H-Db-VJC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T6e-K9-AGc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hfl-P0-aHc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xyF-pv-2uv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aZE-jX-Cvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="776.76161919040487"/>
-=======
             <point key="canvasLocation" x="-567.20000000000005" y="134.48275862068968"/>
         </scene>
         <!--LogInViewController-->
@@ -914,7 +862,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdE-cY-FA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218.40000000000001" y="618.44077961019491"/>
->>>>>>> Dev
         </scene>
     </scenes>
     <resources>
