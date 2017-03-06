@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F75E72C51E638CEC0089114D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72C41E638CEC0089114D /* SignUpViewController.swift */; };
+		F75E72C71E638CF60089114D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72C61E638CF60089114D /* LogInViewController.swift */; };
+		F75E72CB1E638D0D0089114D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72CA1E638D0D0089114D /* InitialViewController.swift */; };
+		F75E72CD1E638D550089114D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72CC1E638D550089114D /* SettingsViewController.swift */; };
 		FDD09E701E611B7B00C9B514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */; };
-		FDD09E721E611B7B00C9B514 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E711E611B7B00C9B514 /* ViewController.swift */; };
+		FDD09E721E611B7B00C9B514 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E711E611B7B00C9B514 /* HomeViewController.swift */; };
 		FDD09E751E611B7B00C9B514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD09E731E611B7B00C9B514 /* Main.storyboard */; };
 		FDD09E771E611B7B00C9B514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD09E761E611B7B00C9B514 /* Assets.xcassets */; };
 		FDD09E7A1E611B7B00C9B514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD09E781E611B7B00C9B514 /* LaunchScreen.storyboard */; };
@@ -34,9 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F75E72C41E638CEC0089114D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F75E72C61E638CF60089114D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F75E72CA1E638D0D0089114D /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F75E72CC1E638D550089114D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FDD09E6C1E611B7B00C9B514 /* Project Runaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Runaway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FDD09E711E611B7B00C9B514 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDD09E711E611B7B00C9B514 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDD09E741E611B7B00C9B514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDD09E761E611B7B00C9B514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDD09E791E611B7B00C9B514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */,
-				FDD09E711E611B7B00C9B514 /* ViewController.swift */,
+				FDD09E711E611B7B00C9B514 /* HomeViewController.swift */,
+				F75E72CA1E638D0D0089114D /* InitialViewController.swift */,
+				F75E72C61E638CF60089114D /* LogInViewController.swift */,
 				FDD09E731E611B7B00C9B514 /* Main.storyboard */,
 				FDD09E761E611B7B00C9B514 /* Assets.xcassets */,
 				FDD09E781E611B7B00C9B514 /* LaunchScreen.storyboard */,
 				FDD09E7B1E611B7B00C9B514 /* Info.plist */,
+				F75E72C41E638CEC0089114D /* SignUpViewController.swift */,
+				F75E72CC1E638D550089114D /* SettingsViewController.swift */,
 			);
 			path = "Project Runaway";
 			sourceTree = "<group>";
@@ -188,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = se329;
 				TargetAttributes = {
 					FDD09E6B1E611B7B00C9B514 = {
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD09E721E611B7B00C9B514 /* ViewController.swift in Sources */,
+				F75E72C71E638CF60089114D /* LogInViewController.swift in Sources */,
+				F75E72C51E638CEC0089114D /* SignUpViewController.swift in Sources */,
+				FDD09E721E611B7B00C9B514 /* HomeViewController.swift in Sources */,
+				F75E72CB1E638D0D0089114D /* InitialViewController.swift in Sources */,
 				FDD09E701E611B7B00C9B514 /* AppDelegate.swift in Sources */,
+				F75E72CD1E638D550089114D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +349,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -382,6 +399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -503,6 +521,7 @@
 				FDD09E961E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDD09E971E611B7B00C9B514 /* Build configuration list for PBXNativeTarget "Project RunawayTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +530,7 @@
 				FDD09E991E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDD09E9A1E611B7B00C9B514 /* Build configuration list for PBXNativeTarget "Project RunawayUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +539,7 @@
 				FDD09E9C1E611B7B00C9B514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
