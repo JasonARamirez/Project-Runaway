@@ -39,6 +39,21 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        /*
+            Use Alamofire to connect to our database through our Node.js API
+        */
+        
+        Alamofire.request("https://project-runaway.herokuapp.com/get") .responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
