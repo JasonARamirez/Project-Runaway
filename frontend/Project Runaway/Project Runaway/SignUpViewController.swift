@@ -14,6 +14,11 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,10 +26,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     @IBAction func toLogInViewController(_ sender: Any) {
+        // TODO: - perform segue
     }
     
     @IBOutlet weak var btn_box: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +42,8 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Checkbox Helper Function
     @IBAction func btn_box(sender: UIButton) {
         if (btn_box.isSelected == true)
         {
@@ -51,9 +58,11 @@ class SignUpViewController: UIViewController {
             btn_box.isSelected = true;
         }
     }
-
     
-    
+    // TODO: - Sign Up Function
+    // post, get response via a callback
+    // if the entered email and username are you unique, create an account,
+    // save this info and send to the next view controller via prepareForSegue below
 
     /*
     // MARK: - Navigation

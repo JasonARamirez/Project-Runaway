@@ -12,6 +12,8 @@
 		F75E72C71E638CF60089114D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72C61E638CF60089114D /* LogInViewController.swift */; };
 		F75E72CB1E638D0D0089114D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72CA1E638D0D0089114D /* InitialViewController.swift */; };
 		F75E72CD1E638D550089114D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E72CC1E638D550089114D /* SettingsViewController.swift */; };
+		F7C6BC4D1E73B33300FFCF9A /* ForgotUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6BC4C1E73B33300FFCF9A /* ForgotUsernameViewController.swift */; };
+		F7C6BC4F1E73B37900FFCF9A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6BC4E1E73B37900FFCF9A /* ForgotPasswordViewController.swift */; };
 		FDD09E701E611B7B00C9B514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */; };
 		FDD09E721E611B7B00C9B514 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09E711E611B7B00C9B514 /* HomeViewController.swift */; };
 		FDD09E751E611B7B00C9B514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD09E731E611B7B00C9B514 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		F75E72C61E638CF60089114D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F75E72CA1E638D0D0089114D /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F75E72CC1E638D550089114D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F7C6BC4C1E73B33300FFCF9A /* ForgotUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewController.swift; sourceTree = "<group>"; };
+		F7C6BC4E1E73B37900FFCF9A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FDD09E6C1E611B7B00C9B514 /* Project Runaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Runaway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD09E711E611B7B00C9B514 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */,
 				FDD09E711E611B7B00C9B514 /* HomeViewController.swift */,
+				F7C6BC4C1E73B33300FFCF9A /* ForgotUsernameViewController.swift */,
+				F7C6BC4E1E73B37900FFCF9A /* ForgotPasswordViewController.swift */,
 				F75E72CA1E638D0D0089114D /* InitialViewController.swift */,
 				F75E72C61E638CF60089114D /* LogInViewController.swift */,
 				FDD09E731E611B7B00C9B514 /* Main.storyboard */,
@@ -347,10 +353,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C6BC4F1E73B37900FFCF9A /* ForgotPasswordViewController.swift in Sources */,
 				F75E72C71E638CF60089114D /* LogInViewController.swift in Sources */,
 				F75E72C51E638CEC0089114D /* SignUpViewController.swift in Sources */,
 				FDD09E721E611B7B00C9B514 /* HomeViewController.swift in Sources */,
 				F75E72CB1E638D0D0089114D /* InitialViewController.swift in Sources */,
+				F7C6BC4D1E73B33300FFCF9A /* ForgotUsernameViewController.swift in Sources */,
 				FDD09E701E611B7B00C9B514 /* AppDelegate.swift in Sources */,
 				F75E72CD1E638D550089114D /* SettingsViewController.swift in Sources */,
 			);

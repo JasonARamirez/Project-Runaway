@@ -1,8 +1,8 @@
 //
-//  InitialViewController.swift
+//  ForgotUsernameViewController.swift
 //  Project Runaway
 //
-//  Created by DeQuan Burnside on 2/26/17.
+//  Created by DeQuan Burnside on 3/10/17.
 //  Copyright © 2017 se329. All rights reserved.
 //
 
@@ -12,20 +12,13 @@ import UIKit
 // TODO: -
 // FIXME: -
 
-class InitialViewController: UIViewController {
+class ForgotUsernameViewController: UIViewController {
     
-    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var pageTitle: UILabel!
 
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var pagePrompt: UILabel!
     
-    @IBAction func toSignUpViewController(_ sender: Any) {
-        // TODO: - perform segue
-    }
-    
-    @IBAction func toLogInViewController(_ sender: Any) {
-        // TODO: - perform segue
-    }
-    
+    @IBOutlet weak var emailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +30,6 @@ class InitialViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

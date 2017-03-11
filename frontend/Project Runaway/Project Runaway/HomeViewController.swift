@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
 
 // MARK: -
 // TODO: -
@@ -15,27 +15,39 @@ import MapKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var MapView: GMSMapView!
+    
+    @IBOutlet weak var homeNavBar: UINavigationBar!
+    
+    @IBOutlet weak var sidebarMenuButton: UIBarButtonItem!
+    
+    @IBOutlet weak var homeSearchBar: UISearchBar!
     
     let regionRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func loadView() {
+        // Create a GMSCameraPosition that tells the map to display the
+        // coordinate -33.86,151.20 at zoom level 6.
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view = mapView
         
-        let initialLocation = CLLocation(latitude: 42.030781, longitude: -93.631913)
-        
-        centerMapOnLocation(location: initialLocation)
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+        marker.title = "Sydney"
+        marker.snippet = "Australia"
+        marker.map = mapView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
-        MapView.setRegion(coordinateRegion, animated: true)
     }
 
 

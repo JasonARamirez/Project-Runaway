@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+
 // MARK: -
 // TODO: -
 // FIXME: -
@@ -28,12 +29,22 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func toSignUpViewController(_ sender: Any) {
+        // TODO: - perform segue
     }
 
     @IBAction func toHomeViewController(_ sender: Any) {
-        
-        
+        // TODO: - perform segue
     }
+    
+    @IBAction func toForgotUsernameViewController(_ sender: Any) {
+        // TODO: - perform segue
+    }
+
+    @IBAction func toForgotPasswordViewController(_ sender: Any) {
+        // TODO: - perform segue
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +56,8 @@ class LogInViewController: UIViewController {
         */
         
         Alamofire.request("https://project-runaway.herokuapp.com/get") .responseJSON { response in
+            
+            
             print(response.request)  // original URL request
             print(response.response) // URL response
             print(response.data)     // server data
@@ -54,8 +67,15 @@ class LogInViewController: UIViewController {
                 print("JSON: \(JSON)")
             }
         }
+        
+        
     }
-
+    
+    // TODO: - Log In function
+    // get response via a callback
+    // if the entered username and password match our records,
+    // save this info and send to the next view controller via prepareForSegue below
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

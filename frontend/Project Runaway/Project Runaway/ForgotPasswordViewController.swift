@@ -1,30 +1,24 @@
 //
-//  InitialViewController.swift
+//  ForgotPasswordViewController.swift
 //  Project Runaway
 //
-//  Created by DeQuan Burnside on 2/26/17.
+//  Created by DeQuan Burnside on 3/10/17.
 //  Copyright © 2017 se329. All rights reserved.
 //
 
 import UIKit
 
+
 // MARK: -
 // TODO: -
 // FIXME: -
 
-class InitialViewController: UIViewController {
-    
-    @IBOutlet weak var logInButton: UIButton!
+class ForgotPasswordViewController: UIViewController {
+    @IBOutlet weak var pageTitle: UILabel!
 
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var pagePrompt: UILabel!
     
-    @IBAction func toSignUpViewController(_ sender: Any) {
-        // TODO: - perform segue
-    }
-    
-    @IBAction func toLogInViewController(_ sender: Any) {
-        // TODO: - perform segue
-    }
+    @IBOutlet weak var usernameTextField: UITextField!
     
     
     override func viewDidLoad() {
