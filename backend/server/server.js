@@ -28,8 +28,11 @@ app.use('/completedTrip', completedTrip);
 var createUser = require('./routing/POST/create_user');
 app.use('/createUser', createUser);
 
-var roadTrip = require('./routing/POST/road_trip');
-app.use('/roadTrip', roadTrip);
+var POSTRoadTrip = require('./routing/POST/road_trip');
+app.use('/roadTrip', POSTRoadTrip);
+
+var GETRoadTrip = require('./routing/GET/road_trip');
+app.use('/roadTrip', GETRoadTrip);
 
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){
