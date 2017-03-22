@@ -1,6 +1,6 @@
-var getRoute = require('../../../database/database').retrieve.routes.getRoute;
+var getRoutePath = require('../../../database/database').retrieve.routes.getRoutePaths;
 module.exports = function(routeID, callback){
-  getRoute(routeID, function(err, paths, startTime){
+  getRoutePath(routeID, function(err, paths, startTime){
     if(err == null){
       paths.sort(comparePaths);
       callback(null, getTimeAndDetails(paths), startTime);

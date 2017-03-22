@@ -1,6 +1,7 @@
 var doesUserIDExist = require('../../shared/user_id_exists');
 var findSafestRoute = require('../../shared/find_safest_route');
-var saveRoute = require('../../shared/save_route');
+var saveRoutePaths = require('../../shared/save_route_paths');
+var saveRoute = require('../../../database/database').insert.routes;
 var createRouteID = require('../../../random_generator/unique_id_generator').generateRouteID;
 var getStartTimeDateTime = require('../../shared/create_date_time');
 
@@ -8,13 +9,15 @@ module.exports = function(request, response){
   var userID = request.userID;
   doesUserIDExist(userID, function(exists){
     if(exists){
-      findSafestRoute(request.start, request.end, function(err, route){
+      var startTime = getStartTimeDateTime(request.startTime);
+      findSafestRoute(request.start, request.end, startTime, function(err, route, choosenStartTime){
         if(err == null){
           createRouteID(function(routeID){
-            var startTime = getStartTimeDateTime(request.startTime);
-            saveRoute(route, userID, routeID, startTime, function(err){
+            saveRoutePaths(route, routeID, function(err){
               if(err == null){
-                responseToSender(null, route, routeID, response);
+                saveRoute(route, routeID, userID, choosenStartTime, function(err){
+                  responseToSender(err, route, routeID, response);
+                });
               }
               else{
                 responseToSender(err, null, null, response);

@@ -1,2 +1,3 @@
 backend/server/node_modules/
 .DS_Store
+backend/testing/node_modules/
