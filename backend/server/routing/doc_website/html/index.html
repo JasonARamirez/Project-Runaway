@@ -16,191 +16,34 @@
         <div class="score-header">
           <nav class="navbar navbar-default yamm score-component score-content score-image score-megamenu" role="navigation">
             <div class="score-nav-wrapper">
-    	        <div class="score-nav">
+              <div class="score-nav">
                 <div class="navbar-header score-navbar-header">
-    					    <a href="/" class="navbar-brand">
-    						    Project Runaway
-       					  </a>
-    				    </div>
-    				    <div class="collapse navbar-collapse" id="mm-7ff95ada-a1e1-48f0-98d8-087e3756e15d">
+                  <a href="/" class="navbar-brand">
+                  Project Runaway
+                  </a>
+                </div>
+                <div class="collapse navbar-collapse" id="mm-7ff95ada-a1e1-48f0-98d8-087e3756e15d">
                   <ul class="nav navbar-nav score-component score-button score-button-menu score-navbar navbar-right">
                     <li class=" score-component score-megamenu-basic-item _gaData {C:'c1', A:'c1_a', L:'c1_a_1'}">
                       <a href="/log_in.html">Log In</a>
                     </li>
                     <li class=" score-component score-megamenu-basic-item">
-                      <a href="/sign_up.html">Sign Up</a>
+                      <a href="/sign_up.html">Get API Key Here</a>
                     </li>
                   </ul>
-    		        </div>
-    			    </div>
-    		    </div>
-    	     </nav>
-         </div>
-       </div>
-     </header>
-     <div class="container">
-     <div class="jumbotron horizontal-center">
-       <div class="container">
-       <table>
-         <tr>
-           <th valign="top">
-             Title
-           </th>
-           <td>
-             <span class="caption">The name of your API call</span> <br>
-             <b>Example : Show All Users </b>
-             <p>
-               <i>
-                 <ul>
-                   <li> Note: try to use verbs that match both request type
-                        (fetching vs modifying) and plurality (one vs multiple.) </li>
-                  <li>Note: Also add additional info here such as a description,
-                      if need be.</li>
-                 </ul>
-               </i>
-             </p>
-           </td>
-         </tr>
-         <tr>
-           <th valign="top">
-             URL
-           </th>
-           <td>
-             <span class="caption">The URL structure (path only, no root url)</span> <br>
-             <b><code>/users</code> or <code>/users/:id</code> or <code>/users?id=:id</code> </b>
-             <p>
-               <i>
-                 <ol>
-                   <li>For fixed urls: /users or /photos</li>
-                   <li>For urls with parameters in them: /users/:id or /photos/:photo_id or /users?id=:id</li>
-                 </ol>
-               </i>
-             </p>
-           </td>
-         </tr>
-         <tr>
-           <th valign="top">
-             Method
-           </th>
-           <td>
-             <span class="caption">The request type</span> <br>
-             <b><code>GET</code> | <code>POST</code> | <code>DELETE</code> | <code>PUT</code> </b>
-           </td>
-         </tr>
-         <tr>
-           <th valign="top">
-             URL Params
-           </th>
-           <td>
-             <span class="caption">If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required.</span> <br>
-             <br>
-             <b>Required:</b> <br>
-             <code>id=[integer]</code> <br>
-             example: id=12  <br><br>
-             <b>Optional</b> <br>
-             <code>photo_id=[alphanumeric]</code> <br>
-             example: photo_id=2345kj3
-           </td>
-         </tr>
-         <tr>
-           <th valign="top">
-             Data Params
-           </th>
-           <td>
-             <span class="caption">If making a post request, what should the body payload look like?
-                            This is a good time to document your various data constraints too.</span> <br>
-        <b>Example:</b> <br>
-        <pre>
-{
-  u : {
-    email : [string],
-    name : [string],
-    current_password : [alphanumeric]
-    password : [alphanumeric],
-    password_confirmation : [alphanumeric]
-  }
-}
-
-</pre>
-<b> Example: </b>
-<pre>
-{
-  u : {
-    email : "john@smith.com",
-    name : "John",
-    current_password : "apassw0rd"
-    password : "anewpassw0rd",
-    password_confirmation : "anewpassw0rd"
-  }
-}
-</pre>
-    </td>
-  </tr>
-
-    <tr>
-      <th valign="top">
-        Success Response
-      </th>
-      <td>
-          <span class="caption">What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!</span> <br>
-          <b> Example: </b> <br>
-          <b>Code:</b> 200 <br>
-          <b>Content:</b> <code> { id : 12 }</code><br>
-      </td>
-    </tr>
-
-    <tr>
-      <th valign="top">
-        Error Response
-      </th>
-      <td>
-          <span class="caption">Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be listed here. It might seem repetitive, but it helps prevent assumptions from being made where they shouldn&#8217;t be.</span> <br>
-          <b> Example: </b> <br>
-          <b>Code:</b> 401 UNAUTHORIZED <br>
-          <b>Content:</b> <code> { error : "Log in" }</code><br>
-          OR<br>
-          <b>Code:</b> 422 Unprocessable Entry <br>
-          <b>Content:</b> <code> { error : "Email invalid" }</code><br>
-      </td>
-    </tr>
-
-    <tr>
-      <th valign="top">
-        Sample Call
-      </th>
-      <td>
-          <span class="caption">Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) &#8211; this makes life easier and more predictable.</span> <br>
-          <pre>
-$.ajax({
-  url: "/users",
-  dataType: "json",
-  data : {
-    u: {
-      id : 12,
-      email : "john@smith.com"
-    }
-  },
-  type : "PUT",
-  success : function(r) {
-    console.log(r);
-  }
-});
-
-</pre>
-      </td>
-    </tr>
-
-    <tr>
-      <th valign="top">
-        Notes
-      </th>
-      <td>
-          <span class="caption">This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here.</span> <br>
-      </td>
-    </tr>
-</table>
-  </div>
-     </div>
-   </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Welcome to the Documentation Page for Project Runaway</h1>
+      <br>
+      <div id="docs">
+      </div>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>

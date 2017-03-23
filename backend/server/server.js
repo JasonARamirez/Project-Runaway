@@ -19,8 +19,8 @@ app.use('/weatherAlongRoute', weatherAlongRoute);
 var weatherAtLocation = require('./routing/GET/weather_at_location');
 app.use('/weatherAtLocation', weatherAtLocation);
 
-var changeStart = require('./routing/PATCH/change_start');
-app.use('/changeStart', changeStart);
+var changeStartTime = require('./routing/PATCH/change_start_time');
+app.use('/changeStartTime', changeStartTime);
 
 var completedTrip = require('./routing/PATCH/completed_trip');
 app.use('/completedTrip', completedTrip);
