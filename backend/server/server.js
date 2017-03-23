@@ -34,6 +34,9 @@ app.use('/roadTrip', POSTRoadTrip);
 var GETRoadTrip = require('./routing/GET/road_trip');
 app.use('/roadTrip', GETRoadTrip);
 
+var documentWebsite = require('./routing/doc_website/routing');
+app.use('/', documentWebsite);
+
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){
   console.log('listening on *:8080');
