@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   background: #e1e8f0 !important;
   border: solid transparent;
   border-width: 10px 0;
@@ -50,4 +51,8 @@ tr{
 }
 h1, h3{
   text-align: center;
+}
+.signIn {
+    display: inline-block;
+    text-align: center;
 }
