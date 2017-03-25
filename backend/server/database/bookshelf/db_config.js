@@ -6,10 +6,10 @@ Configure the db by creating various tables
 var knex = require('knex')({
   client: 'mysql',
   connection: {
-   host: 'us-cdbr-iron-east-04.cleardb.net',
-   user: 'baa5e06bbc2b9b',
-   password: '29da063d',
-   database: 'heroku_625012f21956424'
+   host: 'us-cdbr-iron-east-03.cleardb.net',
+   user: 'b9a1a7a3aea37b',
+   password: '082cb188',
+   database: 'heroku_d1e3a728315a316'
  }
 });
 
@@ -24,7 +24,7 @@ db.knex.schema.hasTable('Users').then(function(exists) {
       table.string('ID', 37).primary();
       //userName the user chooses with limit of 20 characters
       table.string('userName', 20);
-      table.string('userPassword', 20);
+      table.string('userPassword', 32);
       table.string('firstName', 50);
       table.string('lastName', 50);
       table.string('email', 50);

@@ -4,5 +4,5 @@ $(document).ready(function(){
 });
 
 if(sessionStorage.getItem('key')){
-  document.location.href = '/developer';
+  document.location.href = '/dev';
 }

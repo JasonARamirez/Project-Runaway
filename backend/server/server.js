@@ -1,6 +1,7 @@
 //server.js is the interface between the client and the rest of the server.
 //Current local port will be 8080 running on localhost for testing purposes
 
+//Database Module
 var db = require('./database/bookshelf/db_config');
 //Express module
 var app = require('express')();
@@ -36,6 +37,12 @@ app.use('/roadTrip', GETRoadTrip);
 
 var documentWebsite = require('./routing/doc_website/routing');
 app.use('/', documentWebsite);
+
+var devWebsite = require('./routing/dev_website/routing');
+app.use('/dev', devWebsite);
+
+var getAllRoutes = require('./routing/GET/all_trips_start_end_data');
+app.use('/allTripsStartEndData', getAllRoutes);
 
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){

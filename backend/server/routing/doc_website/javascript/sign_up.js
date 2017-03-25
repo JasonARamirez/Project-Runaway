@@ -46,7 +46,7 @@ function validateSignUpForm(){
     var dataJSON = JSON.parse(dataReturned);
     if(dataJSON.success == 1){
       sessionStorage.setItem('key', dataJSON.userID);
-      document.location.href = '/developer';
+      document.location.href = '/dev';
     }
     else{
       alert("Username or Email already exists");

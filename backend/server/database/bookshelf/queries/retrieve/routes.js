@@ -60,6 +60,12 @@ module.exports = {
       });
       callback(null, routesToReturn);
     });
+  },
+
+  getAllRoutes : function(userID, callback){
+    Routes.query('where', {userID : userID}).fetch({withRelated : ['startLocation', 'endLocation']}).then(function(routesFound){
+      callback(null, routesFound.models);
+    });
   }
 }
 
