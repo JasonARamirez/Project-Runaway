@@ -32,6 +32,7 @@ app.controller('map_controller',function($scope, $location){
     retrieveStartEnd(function(routes){
       var markerData = createMarkerData(routes, isStart);
       $scope.markers = insertLocations($scope.map, $scope.markers, markerData);
+      $scope.map
     });
   }
 });
@@ -46,7 +47,7 @@ var retrieveStartEnd = function(callback){
       callback(dataJSON.routes);
     }
     else{
-      alert("Incorrect Username or password");
+      alert("Incorrect API KEY");
     }
   });
 }

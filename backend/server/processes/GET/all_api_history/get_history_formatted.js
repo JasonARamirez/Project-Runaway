@@ -22,7 +22,7 @@ var formatHistory = function(historires){
 }
 
 var sortByEarliestDate = function(a, b){
-  return b.time - a.time;
+  return b.attributes.time - a.attributes.time;
 }
 
 function FormattedHistories(){

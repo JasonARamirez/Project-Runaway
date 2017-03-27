@@ -39,4 +39,8 @@ router.get('/google_maps.js', function(req, res){
   res.sendFile(folderJS + 'google_maps.js');
 });
 
+router.get('/data_doc_view.html', function(req, res){
+  res.sendFile(folderHTML + 'data_doc_view.html');
+});
+
 module.exports = router;

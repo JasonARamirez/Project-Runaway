@@ -16,6 +16,10 @@ var app = angular.module('myApp', ['ngRoute'])
       controller: 'history_controller',
       templateUrl: '/dev/history_view.html'
     })
+    .when('/datadoc',{
+      controller : 'data_doc_controller',
+      templateUrl: '/dev/data_doc_view.html'
+    })
     .otherwise({
       redirectTo : '/'
     });
@@ -31,6 +35,10 @@ app.controller('documenatation_controller',function($scope, $location){
   $(document).ready(function(){
     $('#docs').load("document.html");
   });
+});
+
+app.controller('data_doc_controller', function($scope, $location){
+  //TODO
 });
 
 function signOut(){
