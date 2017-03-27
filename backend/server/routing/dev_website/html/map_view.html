@@ -1,6 +1,11 @@
-<div ng-controller="map_controller">
-  <input id="pac-input" ng-model="searchBox" class="controls" type="text" placeholder="Search">
-  <div class="jumbotron">
+<div ng-controller="map_controller" ng-init="init()">
+  <div class="jumbotron" id="toAppendTo">
+    <label data-ng-repeat="choice in choices">
+      <input type="radio" name="response" data-ng-model="choice.on" data-ng-value="true" ng-change="resetMap(choice.isStart)"/>
+      {{choice.text}}
+      <br>
+    </label>
+    <input id="pac-input" ng-model="searchBox" class="controls" type="text" placeholder="Search">
     <div id="map"></div>
   </div>
 </div>

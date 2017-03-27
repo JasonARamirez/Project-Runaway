@@ -44,6 +44,9 @@ app.use('/dev', devWebsite);
 var getAllRoutes = require('./routing/GET/all_trips_start_end_data');
 app.use('/allTripsStartEndData', getAllRoutes);
 
+var getAllAPIHistory = require('./routing/GET/all_api_history');
+app.use('/allAPIHistory', getAllAPIHistory);
+
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){
   console.log('listening on *:8080');

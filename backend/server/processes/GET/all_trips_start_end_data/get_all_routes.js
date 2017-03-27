@@ -4,8 +4,8 @@ module.exports = function(userID, callback){
     getAllRoutes(userID, function(err, routes){
       if(err == null){
         var formattedRoutes = formatRoutes(routes);
-        formatRoutes.sort(sortRoutesBasedOffStartLatLng);
-        callback(null, routes);
+        formattedRoutes.sort(sortRoutesBasedOffStartLatLng);
+        callback(null, formattedRoutes);
       }
       else{
         callback(err, null);

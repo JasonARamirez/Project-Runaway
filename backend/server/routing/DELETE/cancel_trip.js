@@ -5,8 +5,8 @@ var verifyCancelTrip = require('../../security/data_validation/DELETE/cancel_tri
 var processCancelTrip = require('../../processes/DELETE/cancel_trip/processor');
 var handleRequest = require('../data_handler');
 
-router.patch('/', function(req, res){
-  handleRequest(req, res, verifyChangeStart, processChangeStart);
+router.delete('/', function(req, res){
+  handleRequest(req, res, verifyCancelTrip, processCancelTrip);
 });
 
 module.exports = router;

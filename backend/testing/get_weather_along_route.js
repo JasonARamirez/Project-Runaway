@@ -1,9 +1,9 @@
 var request = require('request');
 
 module.exports = function(host, userID, routeID, callback){
-  var url = host + '/completedTrip?request=' + JSON.stringify({userID : userID, routeID : routeID});
+  var url = host + '/weatherAlongRoute?request=' + JSON.stringify({userID : userID, routeID : routeID, timeOrDistance : 0, interval : 30});
 
-  request.patch(url, function(err, response, body){
+  request.get(url, {timeout : 60000}, function(err, response, body){
     if(err){
       callback(err);
     }
@@ -13,7 +13,7 @@ module.exports = function(host, userID, routeID, callback){
         callback(null);
       }
       else{
-        callback('patch completed trip failed');
+        callback('get weather along route failed');
       }
     }
   });

@@ -15,7 +15,8 @@ function validateSignInForm(){
     var passwordToSend = md5(password);
     var request = JSON.stringify({
       username : username,
-      password : passwordToSend
+      password : passwordToSend,
+      withRoutes : 0
     });
     var data = {
       request : request

@@ -8,7 +8,7 @@ var initMap = function(){
   });
 }
 
-initAutocomplete = function(locations){
+initAutocomplete = function(){
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.09024, lng: -95.712891},
     zoom: 4,
@@ -26,29 +26,6 @@ initAutocomplete = function(locations){
   });
 
   var markers = [];
-
-  locations.forEach(function(location){
-    var latlng = location.lat_lng;
-    var position = {lat : latlng[0], lng : latlng[1]}
-    var title = 'Location: Lat: ' + latlng[0] + ' Lng: ' + latlng[1];
-    var infoWindow = new google.maps.InfoWindow({
-      content : '<p>' + title + '</p>' +
-                '<p>Number of Requests in Progress: ' + location.numInProgress + '</p>' +
-                '<p>Number of Requests Completed: ' + location.numCompleted + '</p>' +
-                '<p>Number of Requests Canceled: ' + location.numCanceled + '</p>'
-    });
-    var marker = new google.maps.Marker({
-      map: map,
-      title: title,
-      animation : google.maps.Animation.DROP,
-      position: position
-    });
-    marker.addListener('click', function(){
-      infoWindow.open(map, marker);
-    });
-    // Create a marker for each place.
-    markers.push(marker);
-  });
 
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
@@ -84,4 +61,38 @@ initAutocomplete = function(locations){
 
     map.fitBounds(bounds);
   });
+  return map;
+}
+
+var insertLocations = function(map, markers, locations){
+  // Clear out the old markers.
+  markers.forEach(function(marker) {
+    marker.setMap(null);
+  });
+  
+  markers = [];
+
+  locations.forEach(function(location){
+    var latlng = location.lat_lng;
+    var position = {lat : latlng[0], lng : latlng[1]}
+    var title = 'Location: Lat: ' + latlng[0] + ' Lng: ' + latlng[1];
+    var infoWindow = new google.maps.InfoWindow({
+      content : '<p>' + title + '</p>' +
+                '<p>Number of Requests in Progress: ' + location.numInProgress + '</p>' +
+                '<p>Number of Requests Completed: ' + location.numCompleted + '</p>' +
+                '<p>Number of Requests Canceled: ' + location.numCanceled + '</p>'
+    });
+    var marker = new google.maps.Marker({
+      map: map,
+      title: title,
+      animation : google.maps.Animation.DROP,
+      position: position
+    });
+    marker.addListener('click', function(){
+      infoWindow.open(map, marker);
+    });
+    // Create a marker for each place.
+    markers.push(marker);
+  });
+  return markers;
 }

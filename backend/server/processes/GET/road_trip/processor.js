@@ -1,3 +1,5 @@
+var apiCalls = require('../../shared/api_calls');
+var History = require('../../shared/history');
 var doesRouteIDExist = require('../../shared/route_id_exists');
 var deletePaths = require('../../shared/remove_paths');
 var getRouteDetails = require('./get_route_details');
@@ -19,36 +21,43 @@ module.exports = function(request, response){
               findSafestRoute(startLatLng, endLatLng, startTime, function(err, route, choosenStartTime){
                 if(err == null){
                   saveRoutePaths(route, routeID, function(err){
-                    responseToSender(err, route, response);
+                    var intent = 'RouteID: ' + routeID;
+                    responseToSender(err, route, response, userID, intent);
                   });
                 }
                 else{
-                  responseToSender(true, null, response)
+                  var intent = 'RouteID: ' + routeID + ' System Error';
+                  responseToSender(true, null, response, userID, intent);
                 }
               });
             }
             else{
-              responseToSender(true, null, response);
+              var intent = 'RouteID: ' + routeID + ' System Error';
+              responseToSender(true, null, response, userID, intent);
             }
           });
         }
         else{
-          responseToSender(true, null, response);
+          var intent = 'RouteID: ' + routeID + ' System Error';
+          responseToSender(true, null, response, userID, intent);
         }
       });
     }
     else{
-      responseToSender(true, null, response);
+      var intent = 'RouteID: ' + routeID + ' does not exist';
+      responseToSender(true, null, response, userID, intent);
     }
   });
 }
 
-var responseToSender = function(err, routeChoosen, response){
+var responseToSender = function(err, routeChoosen, response, userID, intent){
+  var type = apiCalls.getRoadTripString;
+  var history = new History(userID, type, intent);
   if(err != null || routeChoosen == null){
-    response.func(true, null, response.res);
+    response.func(true, null, history, response.res);
   }
   else{
-    response.func(null, {success : 1, route : routeChoosen}, response.res);
+    response.func(null, {success : 1, route : routeChoosen}, history, response.res);
   }
 }
 

@@ -87,4 +87,22 @@ db.knex.schema.hasTable('Locations').then(function(exists) {
   }
 });
 
+db.knex.schema.hasTable('History').then(function(exists) {
+  if (!exists) {
+    //create a table in the db using knex's createTable method
+    db.knex.schema.createTable('History', function(table) {
+      //make a string called userID to represent an assigned userID to be stored with a max of 37 characters
+      table.increments('ID').primary();
+      table.string('userID', 37);
+      table.integer('callType');
+      table.bool('success');
+      table.dateTime('time');
+      table.string('intent', 255);
+    }).then(function(table) {
+      //print to user that it created the Users table
+      console.log('created table :', 'History');
+    })
+  }
+});
+
 module.exports = db;

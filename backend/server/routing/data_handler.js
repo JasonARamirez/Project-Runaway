@@ -9,11 +9,11 @@ module.exports = function(req, res, verifyData, processData){
         processData(requestJSON, {func:sendResponse, res:res});
       }
       else{
-        sendResponse(true, null, res);
+        sendResponse(true, null, null, res);
       }
     });
   }
   else{
-    sendResponse(true, null, res);
+    sendResponse(true, null, null, res);
   }
 };
