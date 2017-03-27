@@ -58,10 +58,10 @@ class LogInViewController: UIViewController {
         Alamofire.request("https://project-runaway.herokuapp.com/get") .responseJSON { response in
             
             
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+            print(response.request as Any)  // original URL request
+            print(response.response as Any) // URL response
+            print(response.data as Any)     // server data
+            print(response.result as Any)   // result of response serialization
             
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
