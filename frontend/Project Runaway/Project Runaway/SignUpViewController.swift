@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 // MARK: -
 // TODO: -
 // FIXME: -
@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBAction func toLogInViewController(_ sender: Any) {
     }
     
@@ -30,6 +32,21 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func callAlamo() {
+        /*
+         Use Alamofire to connect to our database through our Node.js API
+         */
+        //var success: Bool = false
+        let todosEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+        let newTodo = ["username": "", "password": 0, "firstName": "", "lastName": "", "email":""] as [String : Any]
+        Alamofire.request(todosEndpoint, method: .post, parameters: newTodo, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
