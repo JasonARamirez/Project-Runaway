@@ -46,9 +46,9 @@ class HomeViewController: UIViewController {
         return false
     }
 
-    func callRoadTripChecker(userid: String, routeStart: Int, routeEnd: Int, startTime: Int) -> Bool {
+    func callRoadTripChecker(userid: String?, routeStart: Int, routeEnd: Int, startTime: Int) -> Bool {
         let parameters: Parameters = [
-            "userID": userid,
+            "userID": userID,
             "start": [
                 "lat" : routeStart,
                 "long": routeStart
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
             "startTime":startTime
         ]
         
-        //Alamofire.request("https://project-runaway.herokuapp.com/", method: .post, parameters: parameters, encoding: encoding: JSONEncoding.default)
+        //Alamofire.request("https://project-runaway.herokuapp.com/roadTrip", method: .post, parameters: parameters, encoding: encoding: JSONEncoding.default)
         return false
     }
 }

@@ -48,7 +48,7 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         _ = self.textFieldShouldReturn(textField: emailTextField)
-        _ = self.textFieldShouldReturn(textField: passwordTextField)
+//        _ = self.textFieldShouldReturn(textField: passwordTextField)
         // Do any additional setup after loading the view.
         if(loginButton.isTouchInside == true){
             //Send to checklogin to see if sucess
