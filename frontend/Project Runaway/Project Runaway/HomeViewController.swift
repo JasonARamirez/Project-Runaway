@@ -25,14 +25,26 @@ class HomeViewController: UIViewController {
     
     let regionRadius: CLLocationDistance = 1000
     
+    let username = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let alert = UIAlertController(title: "Do something", message: "With this", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: username, style: .default) { action in
+            // perhaps use action.title here
+        })
     }
     
     @IBAction func openMenu(sender: AnyObject) {
         performSegue(withIdentifier: "openMenu", sender: nil)
     }
+    
+    
     
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the

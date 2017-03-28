@@ -13,7 +13,7 @@
         <!--InitialViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="InitialViewController" id="BYZ-38-t0r" customClass="InitialViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" title="InitialViewController" id="BYZ-38-t0r" customClass="InitialViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -260,7 +260,7 @@
         <!--LogInViewController-->
         <scene sceneID="NLq-dX-bdP">
             <objects>
-                <viewController title="LogInViewController" id="p5S-OK-ZSj" customClass="LogInViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" title="LogInViewController" id="p5S-OK-ZSj" customClass="LogInViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1H6-Yh-9q2"/>
                         <viewControllerLayoutGuide type="bottom" id="eqT-FP-fJX"/>
@@ -505,7 +505,7 @@
         <!--HomeViewController-->
         <scene sceneID="epS-pc-ZEZ">
             <objects>
-                <viewController title="HomeViewController" id="gc9-sX-hYq" customClass="HomeViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" id="gc9-sX-hYq" customClass="HomeViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OOt-3Z-zDM"/>
                         <viewControllerLayoutGuide type="bottom" id="jmf-Ve-QXK"/>
@@ -588,16 +588,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fme-DZ-9a5">
                                 <rect key="frame" x="44" y="420" width="287" height="57"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytm-nH-Cjh">
-                                        <rect key="frame" x="121" y="27" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="5PG-Uf-koH"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="toHomeViewController:" destination="p5S-OK-ZSj" eventType="touchUpInside" id="dZ2-pO-qYC"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xho-1w-KNU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xho-1w-KNU">
                                         <rect key="frame" x="81" y="16" width="125" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="9pY-h2-jpO"/>
@@ -620,9 +611,6 @@
                                     <constraint firstItem="Xho-1w-KNU" firstAttribute="top" secondItem="Fme-DZ-9a5" secondAttribute="top" constant="16" id="6Ni-7a-UQR"/>
                                     <constraint firstItem="Xho-1w-KNU" firstAttribute="centerY" secondItem="Fme-DZ-9a5" secondAttribute="centerY" id="DHv-iO-Yuh"/>
                                     <constraint firstAttribute="height" constant="57" id="M9c-mY-qnA"/>
-                                    <constraint firstItem="ytm-nH-Cjh" firstAttribute="centerX" secondItem="Fme-DZ-9a5" secondAttribute="centerX" id="P7k-Sy-vn2"/>
-                                    <constraint firstItem="Xho-1w-KNU" firstAttribute="centerY" secondItem="ytm-nH-Cjh" secondAttribute="centerY" constant="-13" id="aaf-Jb-aIw"/>
-                                    <constraint firstItem="Xho-1w-KNU" firstAttribute="centerX" secondItem="ytm-nH-Cjh" secondAttribute="centerX" id="da4-ly-2gf"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the email associated with your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fd-lc-UpV">
@@ -639,6 +627,7 @@
                                 <rect key="frame" x="164" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="submitButtonPressed:" destination="OFH-gk-5pe" eventType="touchUpInside" id="sIA-ia-W4h"/>
                                     <segue destination="gc9-sX-hYq" kind="show" identifier="toHome" id="2nT-bm-ECu"/>
                                 </connections>
                             </button>
@@ -669,7 +658,7 @@
         <!--SavedTripsViewController-->
         <scene sceneID="cKS-ps-i5H">
             <objects>
-                <viewController title="SavedTripsViewController" id="NiS-eL-in3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedTripsViewController" title="SavedTripsViewController" id="NiS-eL-in3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e64-Qc-TmC"/>
                         <viewControllerLayoutGuide type="bottom" id="wUC-sg-ODk"/>
@@ -682,12 +671,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQo-dQ-cRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="-72"/>
+            <point key="canvasLocation" x="2503" y="-227"/>
         </scene>
         <!--ForgotPasswordViewController-->
         <scene sceneID="8vn-jT-6Jr">
             <objects>
-                <viewController title="ForgotPasswordViewController" id="mpq-zL-he4" customClass="ForgotPasswordViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" title="ForgotPasswordViewController" id="mpq-zL-he4" customClass="ForgotPasswordViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AvA-0l-fMy"/>
                         <viewControllerLayoutGuide type="bottom" id="sih-Ao-7nQ"/>
@@ -770,6 +759,7 @@
                                 <rect key="frame" x="164" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="submitButtonPressed:" destination="mpq-zL-he4" eventType="touchUpInside" id="9qW-RS-Brb"/>
                                     <segue destination="gc9-sX-hYq" kind="show" identifier="toHome" id="dFV-8i-TTa"/>
                                 </connections>
                             </button>
@@ -822,12 +812,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZM-mj-AX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="618"/>
+            <point key="canvasLocation" x="2570" y="494"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="NsF-3B-823">
             <objects>
-                <viewController id="4mZ-zK-qZL" customClass="MenuViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="4mZ-zK-qZL" customClass="MenuViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OP5-vS-2aN"/>
                         <viewControllerLayoutGuide type="bottom" id="gFd-ej-GIM"/>
@@ -840,12 +830,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nS3-Jt-yKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2434" y="494"/>
+            <point key="canvasLocation" x="1742" y="494"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="jwp-ck-vBH">
             <objects>
-                <viewController title="SignUpViewController" id="aeP-ps-Tly" customClass="SignUpViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" title="SignUpViewController" id="aeP-ps-Tly" customClass="SignUpViewController" customModule="Project_Runaway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hy0-JN-wlI"/>
                         <viewControllerLayoutGuide type="bottom" id="8fa-Ys-UPx"/>
@@ -1155,23 +1145,6 @@
             </objects>
             <point key="canvasLocation" x="218.40000000000001" y="618.44077961019491"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="RMg-0M-AcX">
-            <objects>
-                <viewController id="kba-i9-UEJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nhn-M4-H5o"/>
-                        <viewControllerLayoutGuide type="bottom" id="FaR-iQ-mbw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gzD-Yg-TrK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mVc-9d-1Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="Menu" width="50" height="50"/>
@@ -1179,8 +1152,8 @@
         <image name="Unchecked" width="48" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TI6-T7-0og"/>
+        <segue reference="ry9-DI-WHl"/>
         <segue reference="AFK-ac-Uqa"/>
-        <segue reference="vI2-hT-yri"/>
+        <segue reference="dFV-8i-TTa"/>
     </inferredMetricsTieBreakers>
 </document>

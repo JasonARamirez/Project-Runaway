@@ -20,6 +20,10 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toHome", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,6 +20,10 @@ class ForgotUsernameViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toHome", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
