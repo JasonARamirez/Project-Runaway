@@ -28,11 +28,11 @@ var validateCancelTripData = function(req){
 
   console.log('Valid UserID: ' + validUserID);
 
-  var routeIDRegEx = /^[a-zA-Z0-9]{8}[-][a-zA-Z0-9]{4}[-][R][a-zA-Z0-9]{3}[-][a-zA-Z0-9]{4}[-][a-zA-Z0-9]{12}/;
+  /*var routeIDRegEx = /^[a-zA-Z0-9]{8}[-][a-zA-Z0-9]{4}[-][R][a-zA-Z0-9]{3}[-][a-zA-Z0-9]{4}[-][a-zA-Z0-9]{12}/;
   var routeID = req.routeID;
   var validRouteID = userIDRegEx.test(routeID);
 
-  console.log('Valid UserID: ' + validRouteID);
+  console.log('Valid UserID: ' + validRouteID);*/
 
-  return validUserID && validRouteID;
+  return validUserID /*&& validRouteID*/;
 }

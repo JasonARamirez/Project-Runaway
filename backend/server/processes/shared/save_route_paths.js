@@ -1,22 +1,8 @@
-var saveRoute = require('../../database/database').insert.routes;
 var savePath = require('../../database/database').insert.paths;
 var saveLocation = require('../../database/database').insert.locations;
 var async = require('async');
 
-module.exports = function(route, userID, routeID, startTime, callback){
-  insertPaths(route, routeID, function(err){
-    if(err == null){
-      saveRoute(route, routeID, userID, startTime, function(err){
-        callback(err);
-      });
-    }
-    else{
-      callback(err, null);
-    }
-  });
-}
-
-var insertPaths = function(route, routeID, callback){
+module.exports = function(route, routeID, callback){
   var paths = route.paths;
   var asyncTasks = createTasks(paths, routeID);
   async.parallel(asyncTasks, function(err){

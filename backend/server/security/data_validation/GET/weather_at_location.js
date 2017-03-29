@@ -66,8 +66,8 @@ function isArray(toTest) {
 
 function correctDate(matches){
   var year = parseInt(matches[3], 10);
-  var month = parseInt(matches[1], 10) - 1; // months are 0-11
-  var day = parseInt(matches[2], 10);
+  var month = parseInt(matches[2], 10) - 1; // months are 0-11
+  var day = parseInt(matches[1], 10);
   var hour = parseInt(matches[4], 10);
   var minute = parseInt(matches[5], 10);
   var second = parseInt(matches[6], 10);

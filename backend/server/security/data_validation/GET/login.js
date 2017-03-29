@@ -17,8 +17,9 @@ module.exports = function(req, callback){
 var checkLoginJSONProperties = function(req){
   var hasUsername = req.hasOwnProperty('username');
   var hasPassword = req.hasOwnProperty('password');
+  var hasWithRoutes = req.hasOwnProperty('withRoutes');
 
-  return hasUsername && hasPassword;
+  return hasUsername && hasPassword && hasWithRoutes;
 }
 
 var validateLogin = function(req){
@@ -33,5 +34,10 @@ var validateLogin = function(req){
 
   console.log('Password: ' + validPassword);
 
-  return validUsername && validPassword;
+  var withRoutes = req.withRoutes;
+  var numWithRoutes = parseInt(withRoutes, 10);
+  var validWithRoutes = !isNaN(numWithRoutes);
+  validWithRoutes = validWithRoutes && validWithRoutes >= 0 && validWithRoutes <= 1;
+
+  return validUsername && validPassword && validWithRoutes;
 }

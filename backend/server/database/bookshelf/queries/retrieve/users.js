@@ -1,6 +1,6 @@
 var Users = require('../../collections/users');
 var User = require('../../models/users');
-
+var getActiveRoutes = require('./routes').getActiveRoutes;
 module.exports = {
   isUserID : function(userID, callback){
     User.where('ID', userID).fetch().then(function(found){
@@ -50,7 +50,9 @@ module.exports = {
   getUserData : function(username, password, callback){
     User.where({userName : username, userPassword : password}).fetch().then(function(found){
       if(found){
-        callback(null, found);
+        getActiveRoutes(found.attributes.ID, function(err, routes){
+          callback(err, found.attributes, routes);
+        });
       }
       else{
         callback(true, null);
