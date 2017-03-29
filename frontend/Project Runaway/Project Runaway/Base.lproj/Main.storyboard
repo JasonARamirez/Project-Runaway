@@ -292,7 +292,7 @@
                                             <action selector="toForgotPasswordViewController:" destination="p5S-OK-ZSj" eventType="touchUpInside" id="1yx-Tb-eeT"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Username" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Eey-wd-G3Q">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Eey-wd-G3Q">
                                         <rect key="frame" x="81" y="205" width="213" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="S5m-S4-X8M"/>
@@ -490,7 +490,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Eey-wd-G3Q" id="vZe-yh-tuo"/>
+                        <outlet property="emailTextField" destination="Eey-wd-G3Q" id="TAZ-CB-VCb"/>
                         <outlet property="forgotEmailButton" destination="Rxb-13-edd" id="3oI-9C-ITR"/>
                         <outlet property="forgotPasswordButton" destination="w9S-2Z-746" id="VkJ-uZ-6Vr"/>
                         <outlet property="logInButton" destination="Z4Z-QZ-A9e" id="uQ4-Ub-6YD"/>
@@ -565,7 +565,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyz-QP-Hpc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyz-QP-Hpc">
                                 <rect key="frame" x="67" y="28" width="240" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="XFz-WZ-fEM"/>
@@ -588,7 +588,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fme-DZ-9a5">
                                 <rect key="frame" x="44" y="420" width="287" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xho-1w-KNU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xho-1w-KNU">
                                         <rect key="frame" x="81" y="16" width="125" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="9pY-h2-jpO"/>
@@ -607,6 +607,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Xho-1w-KNU" firstAttribute="centerX" secondItem="Fme-DZ-9a5" secondAttribute="centerX" id="2Ay-uR-vnZ"/>
                                     <constraint firstAttribute="width" constant="287" id="4hy-VW-0Xx"/>
                                     <constraint firstItem="Xho-1w-KNU" firstAttribute="top" secondItem="Fme-DZ-9a5" secondAttribute="top" constant="16" id="6Ni-7a-UQR"/>
                                     <constraint firstItem="Xho-1w-KNU" firstAttribute="centerY" secondItem="Fme-DZ-9a5" secondAttribute="centerY" id="DHv-iO-Yuh"/>
@@ -1152,8 +1153,8 @@
         <image name="Unchecked" width="48" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2nT-bm-ECu"/>
         <segue reference="ry9-DI-WHl"/>
-        <segue reference="AFK-ac-Uqa"/>
-        <segue reference="dFV-8i-TTa"/>
+        <segue reference="Yoc-Zy-huR"/>
     </inferredMetricsTieBreakers>
 </document>

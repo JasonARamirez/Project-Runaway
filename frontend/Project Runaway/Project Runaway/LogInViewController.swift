@@ -34,6 +34,10 @@ class LogInViewController: UIViewController {
 
     @IBAction func toHomeViewController(_ sender: Any) {
         // TODO: - perform segue
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        myVC.emailStringPassed = emailTextField.text!
+        navigationController?.pushViewController(myVC, animated: true)
     }
     
     @IBAction func toForgotUsernameViewController(_ sender: Any) {

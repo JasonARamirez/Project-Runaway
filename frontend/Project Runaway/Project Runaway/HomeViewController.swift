@@ -13,7 +13,7 @@ import GoogleMaps
 // TODO: -
 // FIXME: -
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var MapView: GMSMapView!
     
@@ -25,19 +25,20 @@ class HomeViewController: UIViewController {
     
     let regionRadius: CLLocationDistance = 1000
     
-    let username = ""
-    
-    
+    var searchActive : Bool = false
+    var email = ""
+    var emailStringPassed = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let alert = UIAlertController(title: "Do something", message: "With this", preferredStyle: .actionSheet)
+        email = emailStringPassed
         
-        alert.addAction(UIAlertAction(title: username, style: .default) { action in
-            // perhaps use action.title here
-        })
+        showAlert()
+        
+        homeSearchBar.delegate = self
+        homeSearchBar.placeholder = "Search"
     }
     
     @IBAction func openMenu(sender: AnyObject) {
@@ -66,7 +67,47 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showAlert() {
+        
+        let alertController = UIAlertController(title: "Welcome Back", message: "Start a new trip!", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //filtered = data.filter({ (text) -> Bool in
+            //let tmp: NSString = text
+            //let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            //return range.location != NSNotFound
+        //})
+        //if(filtered.count == 0){
+            //searchActive = false;
+        //} else {
+            //searchActive = true;
+        //}
+        //self.tableView.reloadData()
+    }
 
 
 }

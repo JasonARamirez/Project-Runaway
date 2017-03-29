@@ -22,7 +22,7 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func closeMenu(sender: AnyObject) {
-        dismiss(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 

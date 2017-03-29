@@ -14,6 +14,7 @@ import UIKit
 // FIXME: -
 
 class ForgotPasswordViewController: UIViewController {
+    
     @IBOutlet weak var pageTitle: UILabel!
 
     @IBOutlet weak var pagePrompt: UILabel!
