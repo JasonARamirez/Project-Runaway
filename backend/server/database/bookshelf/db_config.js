@@ -6,10 +6,10 @@ Configure the db by creating various tables
 var knex = require('knex')({
   client: 'mysql',
   connection: {
-   host: 'us-cdbr-iron-east-04.cleardb.net',
-   user: 'baa5e06bbc2b9b',
-   password: '29da063d',
-   database: 'heroku_625012f21956424'
+   host: 'us-cdbr-iron-east-03.cleardb.net',
+   user: 'b9a1a7a3aea37b',
+   password: '082cb188',
+   database: 'heroku_d1e3a728315a316'
  }
 });
 
@@ -24,7 +24,7 @@ db.knex.schema.hasTable('Users').then(function(exists) {
       table.string('ID', 37).primary();
       //userName the user chooses with limit of 20 characters
       table.string('userName', 20);
-      table.string('userPassword', 20);
+      table.string('userPassword', 32);
       table.string('firstName', 50);
       table.string('lastName', 50);
       table.string('email', 50);
@@ -83,6 +83,24 @@ db.knex.schema.hasTable('Locations').then(function(exists) {
     }).then(function(table) {
       //print to user that it created the Users table
       console.log('created table :', 'Locations');
+    })
+  }
+});
+
+db.knex.schema.hasTable('History').then(function(exists) {
+  if (!exists) {
+    //create a table in the db using knex's createTable method
+    db.knex.schema.createTable('History', function(table) {
+      //make a string called userID to represent an assigned userID to be stored with a max of 37 characters
+      table.increments('ID').primary();
+      table.string('userID', 37);
+      table.integer('callType');
+      table.bool('success');
+      table.dateTime('time');
+      table.string('intent', 255);
+    }).then(function(table) {
+      //print to user that it created the Users table
+      console.log('created table :', 'History');
     })
   }
 });

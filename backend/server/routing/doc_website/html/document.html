@@ -1,0 +1,777 @@
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>POST: roadTrip</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">Allows user to create road trip with a start location, end locations, and start time; returns Google Maps directions with safest route for the road trip.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/roadTrip</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>POST</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[POST roadTrip json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">POST roadTrip json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [given API Key],
+  start :[[latitude], [longitude]],
+  end : [[latitude], [longitude]],
+  startTime : [day]/[month]/[year]-[hour]:[minutes]:[seconds]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  start :[42.032194, -93.638217],
+  end : [38.638800, -90.231728],
+  startTime : "24/03/2017-12:00:00"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1,
+  routeID : [String],
+  route : {
+    paths : [
+      {
+        distance : [Float in Miles],
+        polyline : [String for Google Maps],
+        start : [[Latitude],[Longitude]],
+        end : [[Latitude],[Longitude]],
+        numPath : [Integer],
+        time : [Integer in Seconds]
+      }
+      ...
+    ],
+    start : [[Latitude],[Longitude]],
+    end : [[Latitude],[Longitude]]
+  }
+}
+          </pre>
+          <br>
+          <b>Content Example:</b>
+          <pre>
+{
+  success : 1,
+  routeID : "55e781fc-0994-R0c9-8bf1-02412b4e067a",
+  route : {
+    paths : [
+      {
+        distance : 0.164727799,
+        polyline : "elp_GzuozPa@EiBSeBQwCYgAMMC",
+        start : [42.032194,-93.6382174],
+        end : [42.0345942,-93.6377758],
+        numPath : 1,
+        time : 28
+      }
+      ...
+    ],
+    start : [42.032194,-93.638217],
+    end : [38.6388,-90.231728]
+  }
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>GET: roadTrip</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">User retrieves Google Maps directions from routeID</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/roadTrip</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>GET</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[GET roadTrip json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">GET roadTrip json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [given API Key],
+  routeID : [given routeID]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  routeID : "828115cd-b0e5-R300-bf66-bebee0a82135"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1,
+  routeID : [String],
+  route : {
+    paths : [
+      {
+        distance : [Float in Miles],
+        polyline : [String for Google Maps],
+        start : [[Latitude],[Longitude]],
+        end : [[Latitude],[Longitude]],
+        numPath : [Integer],
+        time : [Integer in Seconds]
+      }
+      ...
+    ],
+    start : [[Latitude],[Longitude]],
+    end : [[Latitude],[Longitude]]
+  }
+}
+          </pre>
+          <br>
+          <b>Content Example:</b>
+          <pre>
+{
+  success : 1,
+  routeID : "55e781fc-0994-R0c9-8bf1-02412b4e067a",
+  route : {
+    paths : [
+      {
+        distance : 0.164727799,
+        polyline : "elp_GzuozPa@EiBSeBQwCYgAMMC",
+        start : [42.032194,-93.6382174],
+        end : [42.0345942,-93.6377758],
+        numPath : 1,
+        time : 28
+      }
+      ...
+    ],
+    start : [42.032194,-93.638217],
+    end : [38.6388,-90.231728]
+  }
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>GET: weatherAlongRoute</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">User retrieves the weather along the route based on the route ID.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/weatherAlongRoute</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>GET</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[GET weatherAlongRoute json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">GET weatherAlongRoute json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [Given API Key],
+  routeID : [Given routeID],
+  timeOrDistance : [Boolean],
+  interval : [Integer]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : 45a759cf-4305-U5bf-a0a2-a1196f978d76,
+  routeID : 828115cd-b0e5-R300-bf66-bebee0a82135,
+  timeOrDistance : 0,
+  interval : 15
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1,
+  weatherCards : [
+    {
+      numPosition : [Integer],
+      weatherType : [String: Weather Type],
+      temp : [Float in Fahrenheit],
+      time : [DateTime],
+      lat_lng :[[Latitude],[Longitude]],
+      town : [String: Town Name]
+    }
+    ...
+  ]
+}
+          </pre>
+          <br>
+          <b>Content Example:</b>
+          <pre>
+{
+  success : 1,
+  weatherCards : [
+    {
+      numPosition : 1,
+      weatherType : "rain",
+      temp : 62.73,
+      time : "2017-03-24T17:00:00.000Z",
+      lat_lng :[42.032194,-93.6382174],
+      town : Ames, IA
+    }
+    ...
+  ]
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>GET: weatherAtLocation</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">Gets the weather at a specific latitude and longitude and at a specific time.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/weatherAtLocation</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>GET</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[GET weatherAtLocation json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">GET weatherAtLocation json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [Given API Key],
+  loc : [[Latitude], [Longitude]],
+  time : [day]/[month]/[year]-[hour]:[minutes]:[seconds]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  loc : [38.638800, -90.231728],
+  time : "24/03/2017-12:00:00"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1,
+  weatherCard : {
+    weatherType : [String: Weather Type],
+    temp : [Float: in Fahrenheit],
+    town : [String]
+  }
+}
+          </pre>
+          <br>
+          <b>Content Example:</b>
+          <pre>
+{
+  success : 1,
+  weatherCard : {
+    weatherType : "rain",
+    temp : 44.3,
+    town : "Ames, IA"
+  }
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String: Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>PATCH: changeStartTime</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">Changes the starting time of the road trip that belongs to the route ID the user provides.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/changeStartTime</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>PATCH</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[PATCH changeStartTime json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">PATCH changeStartTime json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [Given API Key],
+  routeID : [Given routeID],
+  newStartTime : [day]/[month]/[year]-[hour]:[minutes]:[seconds]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  routeID : "828115cd-b0e5-R300-bf66-bebee0a82135",
+  time : "24/03/2017-12:00:00"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1
+}          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String: Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>PATCH: completedTrip</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">Trip is completed, based on the route ID user provides.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/completedTrip</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>PATCH</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[PATCH completedTrip json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">PATCH completedTrip json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [Given API Key],
+  routeID : [Given routeID]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  routeID : "828115cd-b0e5-R300-bf66-bebee0a82135"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1
+}          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String: Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="jumbotron horizontal-center">
+  <div class="container">
+    <table>
+      <h3>DELETE: cancelTrip</h3>
+      <tr>
+        <th valign="top">
+          Purpose
+        </th>
+        <td>
+          <span class="caption">If the user wants to remove the trip, they can do so.</span>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL
+        </th>
+        <td>
+          <span class="caption">The URL structure</span> <br>
+          <b><code>https://project-runaway.herokuapp.com/cancelTrip</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Method
+        </th>
+        <td>
+          <b><code>DELETE</code></b>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          URL Params
+        </th>
+        <td>
+          <b>Required:</b> <br>
+          <code>request=[DELETE cancelTrip json]</code> <br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Data Params
+        </th>
+        <td>
+          <span class="caption">DELETE cancelTrip json</span> <br>
+          <b>Content:</b> <br>
+          <pre>
+request : {
+  userID : [Given API Key],
+  routeID : [Given routeID]
+}
+          </pre>
+          <b> Example: </b>
+          <pre>
+request : {
+  userID : "45a759cf-4305-U5bf-a0a2-a1196f978d76",
+  routeID : "828115cd-b0e5-R300-bf66-bebee0a82135"
+}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Success Response
+        </th>
+        <td>
+          <b>Code:</b> 200 <br>
+          <b>Content:</b>
+          <pre>
+{
+  success : 1
+}          </pre>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Error Response
+        </th>
+        <td>
+          <b>Content:</b> <code> { success : 0, error : [String: Message]}</code><br>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">
+          Notes
+        </th>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!--Import CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <!--Import Fonts/Icons-->
+    <script src="https://use.fontawesome.com/b9eb6f6c12.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <title>Project Runaway</title>
+    <script>
+      if(!sessionStorage.getItem('key')){
+        location.href = "/";
+      }
+    </script>
+  </head>
+  <body>
+    <header class="score-component score-container headerbg">
+      <div class="score-header-wrapper">
+        <div class="score-header">
+          <nav class="navbar navbar-default yamm score-component score-content score-image score-megamenu" role="navigation">
+            <div class="score-nav-wrapper">
+              <div class="score-nav">
+                <div class="navbar-header score-navbar-header">
+                  <a href="/dev" class="navbar-brand">
+                  Project Runaway
+                  </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav score-component score-button score-button-menu score-navbar navbar-right">
+                    <li class=" score-component score-megamenu-basic-item">
+                      <a href="/dev#documentation">PR API Docs</a>
+                    </li>
+                    <li class=" score-component score-megamenu-basic-item">
+                      <a href="/dev#map">Map</a>
+                    </li>
+                    <li class=" score-component score-megamenu-basic-item">
+                      <a href="/dev#history">History</a>
+                    </li>
+                    <li class=" score-component score-megamenu-basic-item">
+                      <a href="/dev#datadoc">PR Data API Docs</a>
+                    </li>
+                    <li class=" score-component score-megamenu-basic-item">
+                      <a onclick="signOut()">Sign Out</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container page-wrap">
+      <div ng-app="myApp" ng-controller="indexController">
+        <div ng-view></div> <!-- end of myApp -->
+      </div>
+    </div>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/dev/app.js"></script>
+    <script src="/dev/history_controller.js"></script>
+    <script src="/dev/map_controller.js"></script>
+    <script src="/dev/google_maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGuGmq2m1VZv4oXcddcTaxoqvBlRBZ9AY&libraries=places"></script>
+  </body>
+</html>

@@ -69,6 +69,20 @@ module.exports = {
         callback(null, name);
       }
     });
+  },
+
+  getAddress : function(location, callback){
+    var params = {
+      latlng : location
+    }
+    googleMapsClient.reverseGeocode(params, function(err, response){
+      if(err){
+        callback(err, null);
+      }
+      else{
+        callback(null, response.json.results[0].formatted_address);
+      }
+    });
   }
 }
 

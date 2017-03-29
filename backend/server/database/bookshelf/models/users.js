@@ -5,7 +5,7 @@ var user = db.Model.extend({
   hasTimestamps: false,
   routes : function(){
     var Route = require('./routes');
-    return this.hasMany(Route);
+    return this.hasMany(Route, 'userID', 'ID');
   }
 });
 

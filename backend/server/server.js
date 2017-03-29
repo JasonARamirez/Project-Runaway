@@ -1,6 +1,7 @@
 //server.js is the interface between the client and the rest of the server.
 //Current local port will be 8080 running on localhost for testing purposes
 
+//Database Module
 var db = require('./database/bookshelf/db_config');
 //Express module
 var app = require('express')();
@@ -19,8 +20,8 @@ app.use('/weatherAlongRoute', weatherAlongRoute);
 var weatherAtLocation = require('./routing/GET/weather_at_location');
 app.use('/weatherAtLocation', weatherAtLocation);
 
-var changeStart = require('./routing/PATCH/change_start');
-app.use('/changeStart', changeStart);
+var changeStartTime = require('./routing/PATCH/change_start_time');
+app.use('/changeStartTime', changeStartTime);
 
 var completedTrip = require('./routing/PATCH/completed_trip');
 app.use('/completedTrip', completedTrip);
@@ -28,8 +29,23 @@ app.use('/completedTrip', completedTrip);
 var createUser = require('./routing/POST/create_user');
 app.use('/createUser', createUser);
 
-var roadTrip = require('./routing/POST/road_trip');
-app.use('/roadTrip', roadTrip);
+var POSTRoadTrip = require('./routing/POST/road_trip');
+app.use('/roadTrip', POSTRoadTrip);
+
+var GETRoadTrip = require('./routing/GET/road_trip');
+app.use('/roadTrip', GETRoadTrip);
+
+var documentWebsite = require('./routing/doc_website/routing');
+app.use('/', documentWebsite);
+
+var devWebsite = require('./routing/dev_website/routing');
+app.use('/dev', devWebsite);
+
+var getAllRoutes = require('./routing/GET/all_trips_start_end_data');
+app.use('/allTripsStartEndData', getAllRoutes);
+
+var getAllAPIHistory = require('./routing/GET/all_api_history');
+app.use('/allAPIHistory', getAllAPIHistory);
 
 //Start listening on port 8080 on local host
 http.listen(process.env.PORT || 8080, function(){

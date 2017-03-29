@@ -1,3 +1,5 @@
+var apiCalls = require('../../shared/api_calls');
+var History = require('../../shared/history');
 var doesRouteIDExist = require('../../shared/route_id_exists');
 var getLocationsAlongRoute = require('./get_locations_along_route');
 var getWeatherDetails = require('./get_weather_details');
@@ -12,26 +14,31 @@ module.exports = function(request, response){
           var interval = request.interval;
           var timesToCheck = getIntervals(isBasedOnTime, interval, routeDetails.time, routeDetails.distance);
           getWeatherDetails(routeDetails.locations, startTime, timesToCheck.numToCheck, timesToCheck.interval, function(err, weatherCards){
-            responseToSender(err, weatherCards, response);
+            var intent = 'RouteID: ' + routeID;
+            responseToSender(err, weatherCards, response, userID, intent);
           });
         }
         else{
-          responseToSender(true, null, response);
+          var intent = 'RouteID: ' + routeID + ' System Error';
+          responseToSender(true, null, response, userID, intent);
         }
       });
     }
     else{
-      responseToSender(true, null, response);
+      var intent = 'RouteID: ' + routeID + ' does not exist';
+      responseToSender(true, null, response, userID, intent);
     }
   });
 }
 
-var responseToSender = function(err, weatherCards, response){
+var responseToSender = function(err, weatherCards, response, userID, intent){
+  var type = apiCalls.getWeatherAlongRouteString;
+  var history = new History(userID, type, intent);
   if(err != null || weatherCards == null){
-    response.func(true, null, response.res);
+    response.func(true, null, history, response.res);
   }
   else{
-    response.func(null, {success : 1, weatherCards: weatherCards}, response.res);
+    response.func(null, {success : 1, weatherCards: weatherCards}, history, response.res);
   }
 }
 
