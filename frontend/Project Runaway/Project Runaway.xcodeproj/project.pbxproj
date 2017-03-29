@@ -46,6 +46,7 @@
 		F75E72C61E638CF60089114D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F75E72CA1E638D0D0089114D /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F75E72CC1E638D550089114D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FD5E28391E8B23EA00C11E41 /* ProjectRunaway-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectRunaway-Bridging-Header.h"; sourceTree = "<group>"; };
 		FDD09E6C1E611B7B00C9B514 /* Project Runaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Runaway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD09E6F1E611B7B00C9B514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD09E711E611B7B00C9B514 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 				FDD09E7B1E611B7B00C9B514 /* Info.plist */,
 				F75E72C41E638CEC0089114D /* SignUpViewController.swift */,
 				F75E72CC1E638D550089114D /* SettingsViewController.swift */,
+				FD5E28391E8B23EA00C11E41 /* ProjectRunaway-Bridging-Header.h */,
 			);
 			path = "Project Runaway";
 			sourceTree = "<group>";
@@ -510,6 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "se329.gonzalesneal.Project-Runaway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jgn/Google Drive/SE329/Project-Runaway/frontend/Project Runaway/Project Runaway/ProjectRunaway-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -524,6 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "se329.gonzalesneal.Project-Runaway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jgn/Google Drive/SE329/Project-Runaway/frontend/Project Runaway/Project Runaway/ProjectRunaway-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -13,6 +13,7 @@ import Alamofire
 // FIXME: -
 
 
+
 class LogInViewController: UIViewController {
     
     var alert: UIAlertController = UIAlertController(title: "Attention!", message: "Fill out the textboxes!", preferredStyle: UIAlertControllerStyle.alert)
@@ -125,6 +126,22 @@ class LogInViewController: UIViewController {
         return false
     }
     
+    func md5(_ string: String) -> String {
+        
+        let context = UnsafeMutablePointer<CC_MD5_CTX>.allocate(capacity: 1)
+        var digest = Array<UInt8>(repeating:0, count:Int(CC_MD5_DIGEST_LENGTH))
+        CC_MD5_Init(context)
+        CC_MD5_Update(context, string, CC_LONG(string.lengthOfBytes(using: String.Encoding.utf8)))
+        CC_MD5_Final(&digest, context)
+        context.deallocate(capacity: 1)
+        var hexString = ""
+        for byte in digest {
+            hexString += String(format:"%02x", byte)
+        }
+        
+        return hexString
+    }
+    
     /* TODO: - Get request
        In this function, the app should GET a request from our Node.js server
        We should send our username and password
@@ -132,26 +149,34 @@ class LogInViewController: UIViewController {
           If True: segue into Home page
           If False: Alert user / Block segue
     */
-    func checkLogin() -> Bool {
+    func callAlamo() -> Bool {
         /*
          Use Alamofire to connect to our database through our Node.js API
          */
         let success: Bool = false;
+        let md5Pass = md5(passwordTextField.text!)
         
-//        Alamofire.request("https://project-runaway.herokuapp.com/",method: .get, parameters: ["username":emailTextField.text,"password":passwordTextField.text]) .responseJSON { response in
-//            print(response.request)  // original URL request
-//            print(response.response) // URL response
-//            print(response.data)     // server data
-//            print(response.result)   // result of response serialization
-//            
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-//            
-//            //success = response.result.isSuccess
-//        }
+        Alamofire.request("https://project-runaway.herokuapp.com/login",method: .get, parameters: ["username":emailTextField.text!,"password":md5Pass]) .responseJSON { response in
+            print(response.request!)  // original URL request
+            print(response.response!) // URL response
+            print(response.data!)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+            
+            //success = response.result.isSuccess
+        }
         
         return success
+    }
+    
+    func checkLogin() -> Bool {
+        if emailTextField.text != nil && passwordTextField.text != nil {
+            return true
+        }
+        return false
     }
     
     //Send confirmation for forgot password
