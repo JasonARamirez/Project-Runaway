@@ -1,0 +1,174 @@
+<div ng-controller="history_controller" ng-init="init()">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>POST: roadTrip</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+                <tr data-ng-repeat="hist in history.postRoadTrip">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4>GET: roadTrip</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.getRoadTrip">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>GET: weatherAlongRoute</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.getWeatherAlongRoute">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4>GET: weatherAtLocation</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.getWeatherAtLocation">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>PATCH: changeStartTime</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.patchChangeStartTime">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4>PATCH: completedRoadTrip</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.patchCompletedTrip">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>DELETE: cancelRoadTrip</h4>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th><span class="text">Intent</span></th>
+                  <th><span class="text">Success</span></th>
+                  <th><span class="text">Date</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="hist in history.deleteCancelTrip">
+                  <td>{{ hist.intent }}</td>
+                  <td>{{ hist.success }}</td>
+                  <td>{{ hist.time }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

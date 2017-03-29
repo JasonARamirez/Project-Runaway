@@ -13,11 +13,11 @@ var route = db.Model.extend({
   },
   startLocation : function(){
     var Location = require('./locations');
-    return this.hasOne(Location, 'startID');
+    return this.hasOne(Location, 'ID', 'startID');
   },
   endLocation : function(){
     var Location = require('./locations');
-    return this.hasOne(Location, 'endID');
+    return this.hasOne(Location, 'ID', 'endID');
   }
 });
 
